@@ -1,0 +1,22 @@
+{
+  "name": "valerie-mallory-sas-website",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.24",
+    "vite": "^2.9.7"
+  }
+}
