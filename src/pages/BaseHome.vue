@@ -8,8 +8,8 @@
     <!-- Welcome -->
     <div class="prose md:prose-lg max-w-3xl mx-8 lg:mx-auto pt-12 lg:pt-16">
       <div class="space-y-6 lg:space-y-8">
-        <div class="text-xl sm:text-2xl font-semibold text-center">Welcome to Secretly Abandoned Spaces</div>
-        <div>Secretly Abandoned Spaces is a large-scale art installation and an Honorarium Art Grant Selection in development for Burning Man 2022. The piece is a visual story about places we have all lived, but are now abandoned and forgotten.</div>
+        <div class="text-xl sm:text-2xl font-semibold text-center">Welcome to Playful Again!</div>
+        <div>“Playful Again!” is a large-scale art installation in development for Burning Man 2023. The piece is a spirited invitation to Burners to reconnect to our inner childlike wonder that comes from the pure act of play.</div>
       </div>
     </div>
     <div class="container-inner mx-auto space-y-6 pb-2 pt-12">
@@ -22,10 +22,10 @@
     <!-- A Museum of Stories -->
     <div class="prose md:prose-lg max-w-3xl mx-8 lg:mx-auto pt-12">
       <div class="space-y-6 lg:space-y-8">
-        <div class="text-xl sm:text-2xl font-semibold text-center">A Museum of Stories</div>
-        <div>Every abandoned space retains a feeling of what it once was. Abandoned buildings retain a beauty of that which has been forsaken; it’s the loveliness of disintegration.</div>
-        <div>This piece is about the beauty of loss and decay of a building, a community, or a loved one. Elegance emerges from loss. A forgotten place becomes a church of ideas that have died and long passed. The cast figures upon the staircase is a theatre, or a play. The interplay of figures tell their own stories.</div>
-        <div>Abandoned spaces become a museum of stories that have been lost in antiquity.</div>
+        <div class="text-xl sm:text-2xl font-semibold text-center">Let’s Spin, Let’s Dance, Let’s Play!</div>
+        <div>When we were children we loved to play. We learned and explored the world through play. Playtime is where we learned to use our hands, interact with each other and explore the world.  The joy of life was magical when we were at play — we could create anything, and everything we imagined was so very real somehow. To play is a pure activity and is at the core of being human.</div>
+        <div>But now, as adults, we have such limited time to play. We forgot to be ourselves. We forgot our innocence and lost the practice of seeing life without filters.  We live with the fear of expectations and criticism. Life has become full of judgement and consequences. We stopped playing, and have lost a bit of ourselves along the way.</div>
+        <div>“Playful Again!” is all about resurrecting that dreamy and whimsical world of play and bringing us back to that joyful, magical place.</div>
       </div>
     </div>
 

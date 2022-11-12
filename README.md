@@ -1,4 +1,4 @@
-## Secretly Abandoned Spaces
+## Playful Again
 
 Website for Valerie Mallory's art installation, "Secretly Abandoned Spaces"
 

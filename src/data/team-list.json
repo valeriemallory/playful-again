@@ -1,48 +1,33 @@
 {
     "team": [
         { "id":  1, "width": 400, "height": 400, "name": "Valerie Mallory", "img": "team-pic-01.jpg",
-            "bio": "Valerie Mallory is an artist and sculptor based in Oakland, CA and lead artist of Secretly Abandoned Spaces. She began creating art for Burning Man in 2004. In 2013, her work grew from the Center Camp Café to the open playa with a series of large-scale art installations, including Womantree (2014), Soul Refuge (2015), The Bridge and the Cage (2017), The Garden of Relationships (2018) and Bottled Up Genie (2019). Valerie is also a critical care registered nurse." },
+            "bio": "Valerie Mallory is an artist and sculptor based in Oakland, CA and lead artist for “Playful Again!”. She began creating art for Burning Man in 2004. In 2013, her work grew from the Center Camp Café to the open playa with a series of large-scale art installations, including “Womantree” (2014), “Soul Refuge” (2015), “The Bridge and the Cage” (2017), “The Garden of Relationships” (2018), “Bottled Up Genie” (2019) and “Secretly Abandoned Spaces” (2022). Valerie is also a critical care registered nurse." },
 
         { "id":  2, "width": 400, "height": 400, "name": "Mikell Haynes",   "img": "team-pic-02.jpg",
             "bio": "Mikell Haynes is an artist and designer who grew up everywhere from Long Island to Japan. Originally intending to be a fine artist he ended up working as a graphic designer before progressing into designing packaging and medical devices. He has attended every Burning Man since 1998 and been involved with seven on playa art projects and several Center Camp installations." },
 
         { "id":  3, "width": 400, "height": 400, "name": "Peter Mentor",    "img": "team-pic-03.jpg",
-            "bio": "Peter Mentor (a.k.a. \"Fucking Happy\") is headed to his 11th consecutive Burn. He's worked on numerous projects including the 2019 Temple of Direction, Chapel of the Chimes, and the Gallery of Infinity. Peter is helping on build Secretly Abandoned Spaces. He edited the BMORG submission for the project and is the acting Project Manager Manager." },
+            "bio": "Peter Mentor (a.k.a. “Mostly Fucking Happy”) is headed to his 12th consecutive Burn (where, hopefully, he won't break his collarbone again). He's worked on numerous projects including the 2019 Temple of Direction, Chapel of the Chimes, and the Gallery of Infinity. Peter is helping on build Secretly Abandoned Spaces. He edited the BMORG submission for the project and is the acting Project Manager Manager." },
 
-        { "id":  4, "width": 400, "height": 400, "name": "Shawn Bachiochi", "img": "team-pic-04.jpg",
-            "bio": "I'm a Carpenter and Cabinet maker.  After my first Burning man in 2018, I wanted to be involved in building art. I was involved in the pre-build of the 2019 Temple of Direction and The Chapel of Chimes build on Playa. I'm loving being able to give back." },
-
-        { "id":  5, "width": 400, "height": 400, "name": "Dusty Williams",   "img": "team-pic-05.jpg",
+        { "id":  4, "width": 400, "height": 400, "name": "Dusty Williams",   "img": "team-pic-05.jpg",
             "bio": "Jack of all trades and electric extraordinaire, Dusty has been attending the Burn since before it was cool. Dusty brings light and movement to all his art projects specializing in tiny art cars, moving art projects, and giant puppetry. You can find Dusty in his hometown of Santa Barbara lighting up the night with monthly parades and events." },
 
-        { "id":  6, "width": 400, "height": 400, "name": "Rick Damiani",     "img": "team-pic-06.jpg",
+        { "id":  5, "width": 400, "height": 400, "name": "Rick Damiani",     "img": "team-pic-06.jpg",
             "bio": "Rocket Surgeon and Chief Bottle Washer. Former and future sailor, engineer and dabbler in the arcane. Ice and brine encrusted, with a bit of a fuzzy green complexion." },
 
-        { "id":  7, "width": 400, "height": 400, "name": "Vince Felicetta",  "img": "team-pic-07.jpg",
-            "bio": "Vince Felicetta has been a Burner since 2010 and is part of the unSCruz leadership team. Vince's art combines his woodworking skills with his love of blinky lights. His talents have been behind a number of projects for Burning Man and for the Santa Cruz regional burn, including the effigy." },
+        { "id":  6, "width": 400, "height": 400, "name": "Gwendolyn Alley",  "img": "team-pic-10.jpg",
+            "bio": "Writer Gwendolyn Alley (a.k.a. “Art Predator”) went to her first Burning Man in 1992; 2022 will be her 20th Burn. She started spoken word and hung art in the Center Camp Café (1995), breastfed her toddler son Reed in BRC (2005), and worked as nanny for Bettie June of the Artery (2009).  In 2014, she helped build a theme camp where she met Valerie and Mikell, and since then, she's helped Valerie many times on and off playa. In 2019, Gwendolyn joined Minstrel Cramp which was a much needed refuge from the raging dust storms in 2022." },
 
-        { "id":  8, "width": 400, "height": 400, "name": "Kyla Van Gelder",  "img": "team-pic-08.jpg",
-            "bio": "Kyla Wilson Vangelder is a loosely Bay Area based tryer of many things. They are a skilled craftsperson and builder who has worked on parade and puppet builds, as a fine woodworker, and in facilities at art centers. Their first Burn was 2019 with the Valerie and the Bottled Up Genie crew and are so thrilled to be returning this year to play and get dusty once again!" },
+        { "id":  7, "width": 400, "height": 400, "name": "Megan Hope Gurrentz",  "img": "team-pic-11.jpg",
+            "bio": "Megan Hope Gurrentz, a Colorado native, has currently resided in the Bay for nine years. “Playful Again!” has now lured Megan to attend the Burn for her second time. Outdoor enthusiast, acrobatic eccentric, art loving, yogi – Megan is thrilled to be part of this team! Off the playa, find Megan for your residential real estate needs or drop into one of her yoga classes at Berkeley CorePower!" },
 
-        { "id":  9, "width": 400, "height": 400, "name": "Sally Slade",      "img": "team-pic-09.jpg",
-            "bio": "Sally Slade is a builder, cook, artist, bird watcher and natural wine enthusiast. Sally has worked with building large-scale art and puppet projects across the U.S., including a parade float for the city of San Francisco. Most recently, Sally has helped build and open a restaurant in Ojai, CA where she currently lives. Her first Burn was in 2019 and she had the honor to be a part of the build team for Bottled Up Genie that year. Sally is excited to be returning to the playa this year with yet another amazing art project!" },
+        { "id":  8, "width": 400, "height": 400, "name": "Pat Mitchell Rusich",  "img": "team-pic-12.jpg",
+            "bio": "Pat Mitchell Rusich (a.k.a. “Pat With a K”, “Little Miss Random”, and “Random Spark”) is a veteran burner celebrating her 16th Burn this year. She's been an artist of some sort her entire life. Her first Burn she had one of those magical moments that everybody talks about and knew in her heart and soul that she needed to make something for the Playa. Having been a part of the build team for Valerie Mallory’s “Secretly Abandoned Spaces” in 2022, she's excited to help bring “Playful Again!” to the Burn in 2023." },
 
-        { "id": 10, "width": 400, "height": 400, "name": "Gwendolyn Alley",  "img": "team-pic-10.jpg",
-            "bio": "Writer Gwendolyn Alley (a.k.a. \"Art Predator\") went to her first Burning Man in 1992; 2022 will be her 20th Burn. She started spoken word and hung art in the Center Camp Café (1995), breastfed her toddler son Reed in BRC (2005), and worked as nanny for Bettie June of the Artery (2009).  In 2014, she helped build a theme camp where she met Valerie and Mikell, and since then, she's helped Valerie many times on and off playa. In 2019, Gwendolyn joined Minstrel Cramp which will serve as an Art Support Camp in 2022." },
+        { "id":  9, "width": 400, "height": 400, "name": "David Meakin",     "img": "team-pic-14.jpg",
+            "bio": "A former theatrical electrician turned engineer focused on researching renewable energy, he's a master of moral support and feeding the troops. Equally at home with a micrometers and a mallets, David enjoys playing with all forms of matter and energy. Having spent years living in the deserts of New Mexico, he's bringing his expertise in solar technology to make “Playful Again!” 100% solar powered." },
 
-        { "id": 11, "width": 400, "height": 400, "name": "Megan Hope Gurrentz",  "img": "team-pic-11.jpg",
-            "bio": "Megan Hope Gurrentz, a Colorado native, has currently resided in the Bay for nine years. \"Secretly Abandoned Spaces\" has now lured Megan to attend the Burn for her second time. Outdoor enthusiast, acrobatic eccentric, art loving, yogi – Megan is thrilled to be part of this team! Off the playa, find Megan for your residential real estate needs or drop into one of her yoga classes at Berkeley CorePower!" },
-
-        { "id": 12, "width": 400, "height": 400, "name": "Pat Mitchell Rusich",  "img": "team-pic-12.jpg",
-            "bio": "Pat Mitchell Rusich (a.k.a. \"Pat With a K\", \"Little Miss Random\", and \"Random Spark\") is a veteran burner celebrating her BurnCeanera this year... or is it QuinceBurnea!?! She's been an artist of some sort her entire life. Her first Burn she had one of those magical moments that everybody talks about and knew in her heart and soul that she needed to make something for the Playa. She knew she needed to be part of a team of artists and builders and creatives. And this year, being part Valerie Mallory’s \"Secretly Abandoned Spaces\" is a dream come true – a waking dream!" },
-
-        { "id": 13, "width": 400, "height": 400, "name": "Jim Wolff",  "img": "team-pic-13.jpg",
-            "bio": "Jim Wolff (a.k.a. \"Serg\") is headed to his 11th Burn. As a former member of the Center Camp Decor and Documentation teams, he's worked as an artist on numerous projects, including eight Center Camp fence murals and two kiosk displays of his own paintings. Jim recently retired from the aerospace industry where he worked on various rocket engine programs and the Space Station Electric Power System. An avid hiker and trail runner, he co-authored the book, “50 Trail Runs in Southern California.” He’s excited to get back to Black Rock City and continue to share his art and support his theme camp, Ritual of Victory." },
-
-        { "id": 14, "width": 400, "height": 400, "name": "David Meakin",     "img": "team-pic-14.jpg",
-            "bio": "A former theatrical electrician turned engineer focused on researching renewable energy, he's a master of moral support and feeding the troops. Equally at home with a micrometers and a mallets, David enjoys playing with all forms of matter and energy. Having spent years living in the deserts of New Mexico, he's looking forward to his first visit to Black Rock City." },
-
-        { "id": 15, "width": 400, "height": 400, "name": "Nate Williams",    "img": "team-pic-15.jpg",
-            "bio": "Nate (a.k.a. \"Boots\") is a web developer and designer based in Palo Alto, CA who loves creative communities and large-scale art. In addition to developing the website for Secretly Abandoned Spaces, he helps manage the online presence and visibility for the project. When he's not working on technology ventures, he enjoys backpacking in the Sierras." }
+        { "id": 10, "width": 400, "height": 400, "name": "Nate Williams",    "img": "team-pic-15.jpg",
+            "bio": "Nate (a.k.a. “Boots”) is a web developer and designer based in Palo Alto, CA who loves creative communities and large-scale art. In addition to developing the website for “Playful Again!”, he helps manage the online presence and visibility for the project. When he's not working on technology ventures, he enjoys backpacking in the Sierras." }
     ]
 }

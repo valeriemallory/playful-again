@@ -3,7 +3,7 @@
       <nav class="container-inner mx-auto flex flex-wrap justify-between items-center">
         <div>
           <router-link to="/" @click.native="scrollToTop">
-            <div class="text-xl sm:text-2xl font-semibold text-white text-center py-6 lg:px-4 lg:py-6">Secretly Abandoned Spaces</div>
+            <div class="text-xl sm:text-2xl font-semibold text-white text-center py-6 lg:px-4 lg:py-6">Playful Again!</div>
           </router-link>
         </div>
         <div v-if="!isOpen" class="block lg:hidden z-10"> <!-- Burger -->
@@ -18,8 +18,6 @@
         </div>
         <ul class="nav-btn-container uppercase tracking-wide font-bold space-y-2 lg:space-y-0 pb-4 lg:pb-0" :class="isOpen ? 'absolute right-0 top-0': 'hidden lg:flex'">
           <li><router-link to="/" @click="scrollToTop"><div class="nav-btn py-2 px-4 lg:py-3">Home</div></router-link></li>
-          <li><router-link to="/about" @click="scrollToTop"><div class="nav-btn py-2 px-4 lg:py-3">About</div></router-link></li>
-          <li><router-link to="/design" @click="scrollToTop"><div class="nav-btn py-2 px-4 lg:py-3">Design</div></router-link></li>
           <li><router-link to="/team" @click="scrollToTop"><div class="nav-btn py-2 px-4 lg:py-3">Team</div></router-link></li>
           <li><router-link to="/" @click="donateNow"><div class="nav-btn lg:border lg:border-white py-2 px-4 lg:py-3">Donate</div></router-link></li>
         </ul>

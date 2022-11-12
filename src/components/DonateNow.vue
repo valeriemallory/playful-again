@@ -4,7 +4,7 @@
         <div class="prose md:prose-lg mx-8 lg:mx-auto max-w-3xl py-12">
             <div class="space-y-8">
                 <div class="text-xl sm:text-2xl font-semibold text-center">Get Involved</div>
-                <div>Thanks to a <a class="font-base text-orange-600" href="https://journal.burningman.org/2022/03/burning-man-arts/brc-art/announcing-2022-brc-honoraria/" target="_blank">Burning Man Honorarium Art Grant</a> and help from a dedicated crew of volunteers, Secretly Abandoned Spaces is currently being built! But there are still many financial costs that need to be covered, including the material costs for casting the figures as well as transportion and fuel expenses.</div>
+                <div>We're excited to bring “Playful Again!” to Burning Man 2023! For an art exhibition of this scale, there are many financial costs that we need to cover to make this happen. We'd love to have you join our dedicated team of financial backers.</div>
                 <div>Please help us bring this work to the playa by donating to our fundraising campaign.</div>
                 <div class="flex justify-center pt-4"><button class="cta-btn text-white bg-orange-500 hover:bg-orange-400" @click="donateNow">Donate Now</button></div>
             </div>
