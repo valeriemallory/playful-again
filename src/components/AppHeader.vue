@@ -19,7 +19,7 @@
         <ul class="nav-btn-container uppercase tracking-wide font-bold space-y-2 lg:space-y-0 pb-4 lg:pb-0" :class="isOpen ? 'absolute right-0 top-0': 'hidden lg:flex'">
           <li><router-link to="/" @click="scrollToTop"><div class="nav-btn py-2 px-4 lg:py-3">Home</div></router-link></li>
           <li><router-link to="/team" @click="scrollToTop"><div class="nav-btn py-2 px-4 lg:py-3">Team</div></router-link></li>
-          <li><router-link to="/" @click="donateNow"><div class="nav-btn lg:border lg:border-white py-2 px-4 lg:py-3">Donate</div></router-link></li>
+          <li><router-link to="/" @click="donateNow"><div class="nav-btn lg:border lg:border-white py-2 px-4 lg:py-3">Join Us</div></router-link></li>
         </ul>
       </nav>
     </header>
@@ -43,7 +43,8 @@
         this.isOpen = !this.isOpen
       },
       donateNow() {
-        window.open("https://www.gofundme.com/f/secretly-abandoned-spaces", "_blank");
+        window.open("https://www.facebook.com/groups/1517975068660312", "_blank");
+        //window.open("https://www.gofundme.com/f/secretly-abandoned-spaces", "_blank");
       },
     }
   }
