@@ -71,8 +71,7 @@ export default {
       this.isMobile = (window.innerWidth <= 650) || (window.innerWidth <= 950 && window.innerHeight >= 950);
     },
     donateNow() {
-      window.open("https://www.facebook.com/groups/1517975068660312", "_blank");
-      // window.open("https://www.gofundme.com/f/secretly-abandoned-spaces", "_blank");
+      window.open("https://www.gofundme.com/f/playful-again-burningman-2023", "_blank");
     },
   }
 };
