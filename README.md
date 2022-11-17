@@ -1,6 +1,6 @@
 ## Playful Again
 
-Website for Valerie Mallory's art installation, "Secretly Abandoned Spaces"
+Website for Valerie Mallory's art installation, "Playful Again"
 
 ### Installation and setup
 
