@@ -34,7 +34,7 @@
     <div class="prose md:prose-lg max-w-3xl mx-8 lg:mx-auto pb-6 pt-12">
       <div class="space-y-6 lg:space-y-8">
         <div class="text-xl sm:text-2xl font-semibold text-center">About the Installation</div>
-        <div>Playful Again creates an interactive world of mythical fairy tales, wonder, and play. The piece has cast figures within, a playground outside, and casts of 'humanimals' with horns and wings set across the scene.</div>
+        <div>Playful Again creates an interactive world of mythical fairy tales, wonder and play. The piece has cast figures within, a playground outside, and casts of “humanimals” with horns and wings set across the scene.</div>
         <div>Within the dome ceiling, a “human chandelier” of aerialist sculptures hang from a hoop, circling in perpetual motion, fully powered by solar energy.</div>
         <div>The walls inside will have giant paintings of acrobats. At night there will be dramatic shadow play from the solar-powered figures in perpetual motion.</div>
       </div>

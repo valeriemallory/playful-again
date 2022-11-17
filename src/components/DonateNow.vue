@@ -4,7 +4,7 @@
         <div class="prose md:prose-lg mx-8 lg:mx-auto max-w-3xl py-12">
             <div class="space-y-8">
                 <div class="text-xl sm:text-2xl font-semibold text-center">Get Involved</div>
-                <div>We're excited to bring “Playful Again!” to Burning Man 2023! For an art exhibition of this scale, there are many financial costs that we need to cover to make this happen. We'd love to have you join our dedicated team of financial backers.</div>
+                <div>We're excited to bring Playful Again to Burning Man 2023! For an art exhibition of this scale, there are many financial costs that we need to cover to make this happen. We'd love to have you join our dedicated team of financial backers.</div>
                 <div>Please help us bring this work to the playa by donating to our fundraising campaign.</div>
                 <div class="flex justify-center pt-4"><button class="cta-btn text-white bg-orange-500 hover:bg-orange-400" @click="donateNow">Donate Now</button></div>
             </div>
