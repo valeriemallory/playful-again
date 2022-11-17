@@ -3,7 +3,7 @@
       <nav class="container-inner mx-auto flex flex-wrap justify-between items-center">
         <div>
           <router-link to="/" @click.native="scrollToTop">
-            <div class="text-xl sm:text-2xl font-semibold text-white text-center py-6 lg:px-4 lg:py-6">Playful Again!</div>
+            <div class="text-xl sm:text-2xl font-semibold text-white text-center py-6 lg:px-4 lg:py-6">Playful Again</div>
           </router-link>
         </div>
         <div v-if="!isOpen" class="block lg:hidden z-10"> <!-- Burger -->
