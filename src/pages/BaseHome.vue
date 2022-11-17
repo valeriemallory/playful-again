@@ -25,7 +25,7 @@
         <div class="text-xl sm:text-2xl font-semibold text-center">Let’s Spin, Let’s Dance, Let’s Play!</div>
         <div>When we were children, we loved to play. Life was magical when we were at play — we could create anything and everything we imagined was so very real. We learned to use our hands, interact with each other and explore the world through play.</div>
         <div>Unfortunately, as adults we have limited time for play. We forget to be ourselves. We forget our innocence and lose the practice of seeing life without filters. We lose our connection to joy and live with the fear of expectations and criticism. Life becomes full of judgment and consequences.</div>
-        <div>Playful Again is about resurrecting that dreamy and whimsical world of play and bringing us back to that joyful, magical place.</div>
+        <div>Playful Again is about resurrecting that dreamy, whimsical world of play and bringing us back to that magical place.</div>
       </div>
     </div>
     <img class="mx-auto max-w-2xl pb-6 pt-12" src="../assets/home-concept-with-rotation.gif" alt="Concept art of a woman standing in a tree">
