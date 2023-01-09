@@ -47,7 +47,7 @@ export default {
 
         // update the carousel image when user clicks the next nav button
         btnNext() {
-        this.imgIndex = this.imgIndex >= 4 ? 1 : this.imgIndex + 1
+        this.imgIndex = this.imgIndex >= 5 ? 4 : this.imgIndex + 1
         document.getElementById("carousel-img-id").src = this.getCarouselImgUrl(this.imgIndex)
         },
 

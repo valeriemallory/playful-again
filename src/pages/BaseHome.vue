@@ -28,7 +28,9 @@
         <div>Playful Again is about resurrecting that dreamy, whimsical world of play and bringing us back to that magical place.</div>
       </div>
     </div>
-    <img class="mx-auto max-w-xs lg:max-w-2xl pb-6 pt-12" src="../assets/home-concept-with-rotation.gif" alt="Concept art of a woman standing in a tree">
+    <div class="container-inner mx-auto pt-8 lg:pt-10 lg:pb-2">
+      <img src="../assets/home-concept-playground-wide.gif" alt="Concept art of the playground with spinning figures">
+    </div>
 
     <!-- About the piece -->
     <div class="prose md:prose-lg max-w-3xl mx-8 lg:mx-auto pb-6 pt-12">
