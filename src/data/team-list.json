@@ -9,28 +9,31 @@
         { "id":  3, "width": 400, "height": 400, "name": "Peter Mentor",    "img": "team-pic-03.jpg",
             "bio": "Peter Mentor (a.k.a. “Fucking Happy”) has worked on numerous projects including the 2019 Temple of Direction, Chapel of the Chimes, and the Gallery of Infinity. Peter is helping with the build for Playful Again and is the acting Project Manager Manager." },
 
-        { "id":  4, "width": 400, "height": 400, "name": "Dusty Williams",   "img": "team-pic-05.jpg",
+        { "id":  4, "width": 400, "height": 400, "name": "Dusty Williams",   "img": "team-pic-04.jpg",
             "bio": "Jack of all trades and electric extraordinaire, Dusty has been attending the Burn since before it was cool. Dusty brings light and movement to all his art projects specializing in tiny art cars, moving art projects, and giant puppetry. You can find Dusty in his hometown of Santa Barbara lighting up the night with monthly parades and events." },
 
-        { "id":  5, "width": 400, "height": 400, "name": "Rick Damiani",     "img": "team-pic-06.jpg",
+        { "id":  5, "width": 400, "height": 400, "name": "Nathaniel Holben", "img": "team-pic-05.jpg",
+            "bio": "Nathaniel Holben (a.k.a. “Bronze Holbein”) is a Bay Area sculptor that specializes in the fabrication of up-cycled metal art. He has assisted in the production of numerous metal monuments and sculptures that now span the state of California and beyond. His work can currently be found at Main Street Arts Gallery and Five sun’s Brewing in Martinez, CA." },
+
+        { "id":  6, "width": 400, "height": 400, "name": "Rick Damiani",     "img": "team-pic-06.jpg",
             "bio": "Rocket Surgeon and Chief Bottle Washer. Former and future sailor, engineer and dabbler in the arcane. Ice and brine encrusted, with a bit of a fuzzy green complexion." },
 
-        { "id":  6, "width": 400, "height": 400, "name": "Gwendolyn Alley",  "img": "team-pic-10.jpg",
+        { "id":  7, "width": 400, "height": 400, "name": "Gwendolyn Alley",  "img": "team-pic-07.jpg",
             "bio": "Writer Gwendolyn Alley (a.k.a. “Art Predator”) went to her first Burning Man in 1992; 2022 will be her 20th Burn. She started spoken word and hung art in the Center Camp Café (1995), breastfed her toddler son Reed in BRC (2005), and worked as nanny for Bettie June of the Artery (2009).  In 2014, she helped build a theme camp where she met Valerie and Mikell, and since then, she's helped Valerie many times on and off playa. In 2019, Gwendolyn joined Minstrel Cramp which was a much needed refuge from the raging dust storms in 2022." },
 
-        { "id":  7, "width": 400, "height": 400, "name": "Megan Hope Gurrentz",  "img": "team-pic-11.jpg",
+        { "id":  8, "width": 400, "height": 400, "name": "Megan Hope Gurrentz",  "img": "team-pic-08.jpg",
             "bio": "Megan Hope Gurrentz, a Colorado native, has currently resided in the Bay for nine years. Playful Again has now lured Megan to attend the Burn for her second time. Outdoor enthusiast, acrobatic eccentric, art loving, yogi – Megan is thrilled to be part of this team! Off the playa, find Megan for your residential real estate needs or drop into one of her yoga classes at Berkeley CorePower!" },
 
-        { "id":  8, "width": 400, "height": 400, "name": "Pat Mitchell Rusich",  "img": "team-pic-12.jpg",
+        { "id":  9, "width": 400, "height": 400, "name": "Pat Mitchell Rusich",  "img": "team-pic-09.jpg",
             "bio": "Pat Mitchell Rusich (a.k.a. “Pat With a K”, “Little Miss Random”, and “Random Spark”) is a veteran burner celebrating her 16th Burn this year. She's been an artist of some sort her entire life. Her first Burn she had one of those magical moments that everybody talks about and knew in her heart and soul that she needed to make something for the Playa. Having been a part of the build team for Valerie Mallory’s art installation in 2022, she's excited to help bring Playful Again to the Burn in 2023." },
 
-        { "id": 9, "width": 400, "height": 400, "name": "Jim Wolff",  "img": "team-pic-13.jpg",
+        { "id": 10, "width": 400, "height": 400, "name": "Jim Wolff",  "img": "team-pic-10.jpg",
             "bio": "Jim Wolff (a.k.a. “Serg”) is headed to his 12th Burn. As a former member of the Center Camp Decor and Documentation teams, he's worked as an artist on numerous projects, including nine Center Camp fence murals and three Cafe kiosk displays of his paintings. Jim recently retired from the aerospace industry where he worked on various rocket engine programs and the Space Station Electric Power System. An avid hiker and yogi, he co-authored the book, “50 Trail Runs in Southern California.” He’s excited to get back to Black Rock City to support Playful Again, share his art, and support his theme camp, Ritual of Victory." },
 
-        { "id": 10, "width": 400, "height": 400, "name": "David Meakin",     "img": "team-pic-14.jpg",
+        { "id": 11, "width": 400, "height": 400, "name": "David Meakin",     "img": "team-pic-11.jpg",
             "bio": "A former theatrical electrician turned engineer focused on researching renewable energy, he's a master of moral support and feeding the troops. Equally at home with a micrometers and a mallets, David enjoys playing with all forms of matter and energy. Having spent years living in the deserts of New Mexico, he's bringing his expertise in solar technology to make Playful Again 100% solar powered." },
 
-        { "id": 11, "width": 400, "height": 400, "name": "Nate Williams",    "img": "team-pic-15.jpg",
+        { "id": 12, "width": 400, "height": 400, "name": "Nate Williams",    "img": "team-pic-12.jpg",
             "bio": "Nate (a.k.a. “Boots”) is a web developer and designer based in Palo Alto, CA who loves creative communities and large-scale art. In addition to developing the website for Playful Again, he helps manage the online presence and visibility for the project. When he's not working on technology ventures, he enjoys backpacking in the Sierras." }
     ]
 }
