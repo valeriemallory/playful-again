@@ -24,11 +24,11 @@
         { "id":  8, "width": 400, "height": 400, "name": "Gwendolyn Alley",  "img": "team-pic-08.jpg",
             "bio": "Writer Gwendolyn Alley (a.k.a. “Art Predator”) went to her first Burning Man in 1992; 2022 will be her 20th Burn. She started spoken word and hung art in the Center Camp Café (1995), breastfed her toddler son Reed in BRC (2005), and worked as nanny for Bettie June of the Artery (2009).  In 2014, she helped build a theme camp where she met Valerie and Mikell, and since then, she's helped Valerie many times on and off playa. In 2019, Gwendolyn joined Minstrel Cramp which was a much needed refuge from the raging dust storms in 2022." },
 
-        { "id":  9, "width": 400, "height": 400, "name": "Pat Mitchell Rusich",  "img": "team-pic-10.jpg",
-            "bio": "Pat Mitchell Rusich (a.k.a. “Pat With a K”, “Little Miss Random”, and “Random Spark”) is a veteran burner celebrating her 16th Burn this year. She's been an artist of some sort her entire life. Her first Burn she had one of those magical moments that everybody talks about and knew in her heart and soul that she needed to make something for the Playa. Having been a part of the build team for Valerie Mallory’s art installation in 2022, she's excited to help bring Playful Again to the Burn in 2023." },
-
-        { "id": 10, "width": 400, "height": 400, "name": "Peter Mentor",    "img": "team-pic-03.jpg",
+        { "id":  9, "width": 400, "height": 400, "name": "Peter Mentor",    "img": "team-pic-03.jpg",
             "bio": "Peter Mentor (a.k.a. “Fucking Happy”) has worked on numerous projects including the 2019 Temple of Direction, Chapel of the Chimes, and the Gallery of Infinity. Peter is helping with the build for Playful Again and is the acting Project Manager Manager." },
+
+        { "id": 10, "width": 400, "height": 400, "name": "Pat Mitchell Rusich",  "img": "team-pic-10.jpg",
+            "bio": "Pat Mitchell Rusich (a.k.a. “Pat With a K”, “Little Miss Random”, and “Random Spark”) is a veteran burner celebrating her 16th Burn this year. She's been an artist of some sort her entire life. Her first Burn she had one of those magical moments that everybody talks about and knew in her heart and soul that she needed to make something for the Playa. Having been a part of the build team for Valerie Mallory’s art installation in 2022, she's excited to help bring Playful Again to the Burn in 2023." },
 
         { "id": 11, "width": 400, "height": 400, "name": "David Meakin",     "img": "team-pic-12.jpg",
             "bio": "A former theatrical electrician turned engineer focused on researching renewable energy, he's a master of moral support and feeding the troops. Equally at home with a micrometers and a mallets, David enjoys playing with all forms of matter and energy. Having spent years living in the deserts of New Mexico, he's bringing his expertise in solar technology to make Playful Again 100% solar powered." },
