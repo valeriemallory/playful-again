@@ -24,17 +24,20 @@
         { "id":  8, "width": 400, "height": 400, "name": "Matt Brown",     "img": "team-pic-08.jpg",
             "bio": "Returning to Playa for his 5th Burn, Matt Brown (a.k.a. “Wookiegoldboof”) reigns supreme over the Chill Middle Kingdom of SLO County. He's a certified electrician, solar extroadinare, and thinks he's an exotic dancer from time to time. Matt enjoys family, friends, random adventures, skateboarding, art, and music. If you see this creature in the wild, give him a big hug and point him to the nearest ground score!" },
 
-        { "id":  9, "width": 400, "height": 400, "name": "Chris Caspary-Bugely",     "img": "team-pic-09.jpg",
-            "bio": "Man of the mountains! Hailing from the swamps of Lake Tahoe, California, Chris's first Burn was in 2008. This year will be his first official return to Black Rock City since 2015 and his first time working on an art installation. He enjoys snowboarding, kayaking, and getting extra, extra weird in the dust!" },
-
-        { "id": 10, "width": 400, "height": 400, "name": "Dylan Brown",     "img": "team-pic-10.jpg",
-            "bio": "Longtime home brewer and bartender based on the central coast of California, Dylan Brown loves his dog, art, music and getting down on the dance floor. He's excited to bring an exceptional lineup of intricately crafted cocktails to his first Burning Man. This is his first time working on an art installation and he hopes he’ll get to help out with many more in the future!" },
-
-        { "id": 11, "width": 400, "height": 400, "name": "Matt Nicholson",     "img": "team-pic-11.jpg",
+        { "id": 9, "width": 400, "height": 400, "name": "Matt Nicholson",     "img": "team-pic-09.jpg",
             "bio": "Matt Nicholson is a first-time Burner and longtime glistener. A serial prankster with a playful spirit, he spends his days as a professional Dad in the nation's capitol (a.k.a. “The District”, not “DISTRIKT”). Matt has a passion for art and music and he dabbles in both, finding endless outlets to release his creativity. He approaches life with an exploratory perspective, never worrying about getting lost along the way." },
 
-        { "id": 13, "width": 400, "height": 400, "name": "Jocelyn Simlick",  "img": "team-pic-13.jpg",
+        { "id": 10, "width": 400, "height": 400, "name": "Chris Caspary-Bugely",  "img": "team-pic-10.jpg",
+            "bio": "Man of the mountains! Hailing from the swamps of Lake Tahoe, California, Chris's first Burn was in 2008. This year will be his first official return to Black Rock City since 2015 and his first time working on an art installation. He enjoys snowboarding, kayaking, and getting extra, extra weird in the dust!" },
+
+        { "id": 11, "width": 400, "height": 400, "name": "Davo Task",  "img": "team-pic-11.jpg",
+            "bio": "Davo Task (they/them) is a budding, multidisciplinary artist, farmer, and musician. Davo is pursuing their BFA in Textiles and also works with black and white film, found objects, sounds, spray paint, and wheat paste. Davo has been assisting Valerie on Playful Again since June and is honored to apprentice with her process and to be a part of the Playful Again team! Davo is committed to cultural and environmental resilience, preserving the analog craft, and defending our planet. Having come to deeply enjoy casting, they are working on a documentary of their experience to be showcased this Fall. " },
+
+        { "id": 12, "width": 400, "height": 400, "name": "Jocelyn Simlick",  "img": "team-pic-12.jpg",
             "bio": "Joce (a.k.a. “Zip-Tie”) is a goofy microbiologist located in San Jose, CA. She works on an antibiotic susceptibility test for sepsis patients, with plans to return to school to become a professor. Last year was her first year at Burning Man. She had an amazing first burn camping with PO@6 and looks forward to helping with Playful Again at Burning Man 2023. When she's not on the Playa, she loves dancing, cooking, coloring hair, driving her Jeep, and hanging out with friends, family and her adorable cat, “Low-Key Stinky Bomb.”" },
+
+        { "id": 13, "width": 400, "height": 400, "name": "Dylan Brown",     "img": "team-pic-13.jpg",
+            "bio": "Longtime home brewer and bartender based on the central coast of California, Dylan Brown loves his dog, art, music and getting down on the dance floor. He's excited to bring an exceptional lineup of intricately crafted cocktails to his first Burning Man. This is his first time working on an art installation and he hopes he’ll get to help out with many more in the future!" },
 
         { "id": 14, "width": 400, "height": 400, "name": "Gwendolyn Alley",  "img": "team-pic-14.jpg",
             "bio": "Writer Gwendolyn Alley (a.k.a. “Art Predator”) went to her first Burning Man in 1992; 2022 will be her 20th Burn. She started spoken word and hung art in the Center Camp Café (1995), breastfed her toddler son Reed in BRC (2005), and worked as nanny for Bettie June of the Artery (2009).  In 2014, she helped build a theme camp where she met Valerie and Mikell, and since then, she's helped Valerie many times on and off playa. In 2019, Gwendolyn joined Minstrel Cramp which was a much needed refuge from the raging dust storms in 2022." },
