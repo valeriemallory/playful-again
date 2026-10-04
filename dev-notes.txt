@@ -52,6 +52,19 @@ was itself converted the same way). Notes on what changed and why:
   SvelteKit 3; the site sets no cookies, so this is accepted for now.
 
 
+FOLLOW-UP FIXES (2026-10-03)
+------------------------------
+- Nav drawer: the burger/close (X) wrapper in NavBar.svelte had a z-index
+  but no `relative`, so the z-index did nothing and the open mobile drawer
+  covered the X (tapping it hit the drawer, not the button). It's now
+  `relative z-30`, so the X sits above the drawer and closes it.
+- Fonts: src/app.html now loads Open Sans with a plain <link rel="stylesheet">
+  instead of the preload + onload="this.rel='stylesheet'" trick. The old
+  pattern first painted in the system fallback font and never applied Open
+  Sans if inline handlers were blocked (strict CSP, some privacy extensions).
+- Node: netlify.toml NODE_VERSION and .nvmrc bumped from 20 to 22 (Node 20 is
+  end-of-life).
+
 TODO / NOT YET DONE
 ----------------------
 - Image optimization: static/img/ still contains the original unoptimized

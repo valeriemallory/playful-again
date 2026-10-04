@@ -40,7 +40,7 @@
     </a>
 
     <!-- Burger / close button — mobile only -->
-    <div class="z-30 block lg:hidden">
+    <div class="relative z-30 block lg:hidden">
       <button
         onclick={() => (isOpen = !isOpen)}
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
