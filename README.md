@@ -1,27 +1,92 @@
 ## Playful Again
 
-Website for Valerie Mallory's art installation, "Playful Again"
+Website for Valerie Mallory's art installation [Playful Again](https://playfulagain.org).
 
-### Installation and setup
+## Tech Stack
 
-1. Install dependencies
+| Layer | Technology |
+|---|---|
+| Framework | [SvelteKit 2.70](https://svelte.dev/docs/kit/introduction) |
+| UI | [Svelte 5](https://svelte.dev/docs/svelte/overview) with Runes |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com) via `@tailwindcss/vite` |
+| Language | TypeScript |
+| Hosting | [Netlify](https://netlify.com) via `@sveltejs/adapter-netlify` |
+| Build tooling | [Vite 7](https://vitejs.dev) |
 
-```bash
+## Development
+
+### Install dependencies
+
+```sh
 npm install
 ```
 
-2. Run the project for local dev -- this will run Vite and start a hot-reloading server at `localhost:3000`
+### Start the dev server
 
-```bash
+```sh
 npm run dev
+
+# open in browser automatically
+npm run dev -- --open
 ```
 
-3. Build the app for deployment & serve preview at `localhost:3000`
+### Type checking
 
-```bash
-# Run the build command (vite build)
+```sh
+npm run check
+```
+
+### Build for production
+
+```sh
 npm run build
 
-# Preview the deployment locally using Vite as a server (vite preview)
+# preview the production build locally
 npm run preview
 ```
+
+## Project Structure
+
+```
+src/
+├── app.css                    Tailwind import + `.container-inner` layout utility
+├── app.html                   Root HTML template; loads Open Sans from Google Fonts
+├── lib/
+│   ├── components/
+│   │   ├── NavBar.svelte         Fixed top nav; mobile hamburger drawer below 1024px
+│   │   ├── Footer.svelte         Copyright + social links
+│   │   ├── SocialMediaLinks.svelte  Email / Facebook / Instagram icon links
+│   │   ├── Carousel.svelte       Homepage hero — rotates concept-art images on a timer
+│   │   └── DonateNow.svelte      Get Involved / GoFundMe CTA section, reused on every page
+│   └── data/
+│       └── team-list.json     Team member names, photos and bios (used on /team)
+├── routes/
+│   ├── +layout.svelte         Global layout: NavBar, Footer, site meta tags
+│   ├── +page.svelte           Home: hero carousel + intro copy + concept art + Donate CTA
+│   ├── team/                  Team grid (photo + bio per member)
+│   └── +error.svelte          404 page (replaces the old Vue catch-all route)
+static/
+├── img/                        Concept art, team photos, hero images (unoptimized originals)
+├── favicon.png
+└── playful-again-concept-art.jpg   Social-share (og:image / twitter:image) preview image
+_redirects (project root)       Domain-alias redirects — must stay at the repo root, not in static/,
+                                 for @sveltejs/adapter-netlify to pick it up
+```
+
+`legacy-site/` holds the previous Vue.js implementation, kept for reference only —
+it is not built or deployed.
+
+## Deployment
+
+The site is hosted on [Netlify](https://netlify.com) using
+`@sveltejs/adapter-netlify`. `netlify.toml` configures the build command
+(`npm run build`) and publish directory (`build`). Connect the GitHub repo in
+the Netlify dashboard, or deploy via the Netlify CLI:
+
+```sh
+npm install -g netlify-cli
+netlify deploy
+```
+
+See `dev-notes.txt` for migration notes and open next-steps (image
+optimization, etc).

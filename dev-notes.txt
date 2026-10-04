@@ -1,0 +1,65 @@
+Playful Again — Development Notes
+==================================
+
+
+FRAMEWORK MIGRATION (2026-10-03)
+----------------------------------
+This site was converted from Vue 3 + Vue Router + Vite 2 to Svelte 5 (Runes)
++ SvelteKit 2, mirroring the sibling site secretly-abandoned-spaces (which
+was itself converted the same way). Notes on what changed and why:
+
+- SvelteKit version: stayed on the 2.x line (^2.70.3, latest 2.x) rather than
+  3.0.0. SvelteKit 3.0.0 was only released on 2026-10-01 and requires
+  TypeScript 6, Vite 8, Node >=22.17 and adapter-netlify 7 — too new to have
+  much community support/examples yet. Revisit the upgrade later.
+- legacy-site/ holds the previous Vue implementation for reference only. It
+  is not built or deployed.
+- /about and /design routes NOT ported: the old main.js registered these
+  routes, but they weren't linked from the nav and their pages
+  (legacy-site/src/pages/BaseAbout.vue, BaseDesign.vue) contained
+  Secretly Abandoned Spaces copy and images — leftovers from when this site
+  was cloned from that one. They now 404. The matching SAS-only images
+  (about-overview.jpg, concept-art-*.jpg, cast-figure-*.jpg, design-*.jpg)
+  were deleted from static/img/ (still in git history, and the old pages
+  in legacy-site/ still reference them by their old src/assets/ paths).
+- Also unused (carried over from the old src/assets/): team-pic-07a.jpg and
+  home-concept-playground-square.gif.
+- Nav breakpoint: the old header used two different breakpoints (Tailwind's
+  `lg:` at 1024px to show/hide the burger, plus a separate custom @media
+  max-width:950px to style the open drawer). Unified onto a single 1024px
+  (`lg:`) breakpoint in src/lib/components/NavBar.svelte. The drawer now also
+  closes on route change, Escape, or a tap on the backdrop.
+- Donate nav button: previously a `router-link` to "/" with a click handler
+  that opened GoFundMe in a new tab AND navigated the current page to "/".
+  It's now a plain button that only opens GoFundMe.
+- Hero carousel (src/lib/components/Carousel.svelte): still swaps a single
+  image every 15s with hover-reveal prev/next arrows on desktop. The old
+  isMobile-driven JS src-swap (sm vs lg image) was replaced with a native
+  `<picture>`/`<source media>` element.
+- Footer Facebook icon: replaced the old base64-encoded raster PNG with a
+  `currentColor` vector SVG (same icon as the sibling sites).
+- Fonts: the original index.html never loaded the 'Open Sans' font declared
+  in tailwind.config.js, so production was falling back to a system
+  sans-serif. src/app.html now loads Open Sans from Google Fonts, so body text
+  will look slightly different (as originally intended) once deployed.
+- All external links (`target="_blank"`) now include
+  `rel="noopener noreferrer"`.
+- _redirects (playfulagain.com -> .org domain aliases) moved to the project
+  root, as required by @sveltejs/adapter-netlify. The old SPA-fallback rule
+  (`/* /index.html 200`) was dropped since the adapter handles routing.
+- `npm audit` reports 3 low-severity findings (GHSA-pxg6-pf52-xh8x in the
+  `cookie` package, pulled in by every @sveltejs/kit 2.x). The only fix is
+  SvelteKit 3; the site sets no cookies, so this is accepted for now.
+
+
+TODO / NOT YET DONE
+----------------------
+- Image optimization: static/img/ still contains the original unoptimized
+  JPGs/GIFs (the playground GIF is large). No resizing/compression/WebP pass
+  has been done as part of this migration.
+
+
+DEV NOTES / ARCHITECTURE REMINDERS
+-------------------------------------
+- Production is hosted on Netlify at https://playfulagain.org/.
+- team-list.json (src/lib/data/team-list.json) is used by the Team page.
