@@ -17,8 +17,8 @@
 </div>
 <div class="container-inner mx-auto space-y-6 pt-12 pb-2">
   <div class="flex flex-col space-y-6 lg:flex-row lg:space-y-0 lg:space-x-6">
-    <img class="basis-1/2" src="/img/home-concept-art-01.jpg" alt="Concept art for a crouching angel figure" />
-    <img class="basis-1/2" src="/img/home-concept-art-02.jpg" alt="Concept art for a spinning 'human chandelier'" />
+    <img class="basis-1/2" src="/img/ui/home-concept-art-01.jpg" alt="Concept art for a crouching angel figure" />
+    <img class="basis-1/2" src="/img/ui/home-concept-art-02.jpg" alt="Concept art for a spinning 'human chandelier'" />
   </div>
 </div>
 
@@ -32,7 +32,7 @@
   </div>
 </div>
 <div class="container-inner mx-auto pt-8 lg:pt-10 lg:pb-2">
-  <img src="/img/home-concept-playground-wide.gif" alt="Concept art of the playground with spinning figures" />
+  <img src="/img/ui/home-concept-playground-wide.gif" alt="Concept art of the playground with spinning figures" />
 </div>
 
 <!-- About the Installation -->
@@ -46,8 +46,8 @@
 </div>
 <div class="container-inner mx-auto space-y-6 pt-12 pb-6">
   <div class="flex flex-col space-y-6 lg:flex-row lg:space-y-0 lg:space-x-6">
-    <img class="basis-1/2" src="/img/home-concept-art-03.jpg" alt="Concept art for a kneeling woman with a curly ram-like horns on her head" />
-    <img class="basis-1/2" src="/img/home-concept-art-04.jpg" alt="Concept art for a woman standing, unfurling a set of bat-like wings" />
+    <img class="basis-1/2" src="/img/ui/home-concept-art-03.jpg" alt="Concept art for a kneeling woman with a curly ram-like horns on her head" />
+    <img class="basis-1/2" src="/img/ui/home-concept-art-04.jpg" alt="Concept art for a woman standing, unfurling a set of bat-like wings" />
   </div>
 </div>
 

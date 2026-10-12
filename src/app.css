@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Theme colors used by the gallery components (ImageGallery, GalleryImage) and
+   the gallery page — values match the Valerie Mallory Studio light theme. */
+:root {
+  --text-primary: #1A1A18;
+  --text-secondary: #605D5B;
+  --accent: #3E7A68;
+  --border: #E5E2DC;
+}
+
 html {
   font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 }

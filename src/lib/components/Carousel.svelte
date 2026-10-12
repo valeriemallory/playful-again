@@ -30,9 +30,9 @@
 <div class="carousel-image-container relative h-96 w-screen lg:h-screen" role="region" aria-label="Concept art for Playful Again">
   {#key index}
     <picture>
-      <source media="(max-width: 650px)" srcset={`/img/hero-${num(index)}-sm.jpg`} />
+      <source media="(max-width: 650px)" srcset={`/img/ui/hero-${num(index)}-sm.jpg`} />
       <img
-        src={`/img/hero-${num(index)}-lg.jpg`}
+        src={`/img/ui/hero-${num(index)}-lg.jpg`}
         alt="Concept art for Playful Again"
         class="absolute h-full w-full object-cover"
       />
