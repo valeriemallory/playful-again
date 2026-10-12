@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
+  import { themeState, toggleTheme } from '$lib/theme.svelte.js';
 
   let isOpen = $state(false);
 
@@ -7,6 +8,7 @@
     { href: '/', label: 'Home' },
     { href: '/gallery', label: 'Gallery' },
     { href: '/team', label: 'Team' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   let pathname = $derived(page.url.pathname);
@@ -19,9 +21,6 @@
     isOpen = false;
   }
 
-  function donateNow() {
-    window.open('https://www.gofundme.com/f/playful-again-burningman-2023', '_blank', 'noopener,noreferrer');
-  }
 
   // Close the mobile drawer whenever the route changes
   $effect(() => {
@@ -69,10 +68,54 @@
           </a>
         </li>
       {/each}
+
+      <!-- Theme toggle + Instagram: icon-only on desktop; icon + label in the
+           mobile drawer, below a separator (same layout as valerie-mallory-studio) -->
+      <li class="drawer-sep lg:hidden" aria-hidden="true"></li>
       <li>
-        <button onclick={donateNow} class="nav-btn block w-full px-4 py-2 text-left font-bold tracking-wide uppercase lg:w-auto lg:border lg:border-white lg:py-3">
-          Donate
+        <button
+          class="nav-btn icon-btn"
+          onclick={toggleTheme}
+          aria-label={themeState.mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+        >
+          {#if themeState.mode === 'light'}
+            <!-- Moon: switch to dark -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          {:else}
+            <!-- Sun: switch to light -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          {/if}
+          <span class="lg:hidden">Theme</span>
         </button>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/valerie_mallory/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-btn icon-btn"
+          onclick={close}
+          aria-label="Valerie Mallory Art on Instagram"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          </svg>
+          <span class="ig-handle lg:hidden">@valerie_mallory</span>
+        </a>
       </li>
     </ul>
   </nav>
@@ -128,5 +171,48 @@
   .nav-btn:hover,
   .nav-btn.active {
     background-color: rgba(115, 115, 115, 0.7); /* neutral-500 */
+  }
+  /* Theme toggle + Instagram items */
+  .icon-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    text-align: left;
+  }
+
+  /* Instagram handle in the drawer: lighter and smaller than the uppercase
+     links so it fits the drawer width; wraps if it still doesn't */
+  .ig-handle {
+    min-width: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    overflow-wrap: anywhere;
+  }
+
+  .icon-btn svg {
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .icon-btn {
+      width: auto;
+      height: 100%;
+      padding: 0.75rem 0.375rem; /* same side padding as the studio site's toggle */
+    }
+  }
+
+  .drawer-sep {
+    margin: 0.5rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 </style>

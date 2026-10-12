@@ -76,3 +76,136 @@ DEV NOTES / ARCHITECTURE REMINDERS
 -------------------------------------
 - Production is hosted on Netlify at https://playfulagain.org/.
 - team-list.json (src/lib/data/team-list.json) is used by the Team page.
+
+
+SITE UPDATES (2026-10-11)
+---------------------------
+Same changes were made on womantree, playful-again and secretly-abandoned-spaces.
+- "Get Involved" / Donate Now section -> "Thanks for your support". The
+  component was renamed from DonateNow.svelte to ThanksForSupport.svelte. Its
+  orange button now reads "Visit Our Studio" and links to
+  https://valeriemallory.com/ (opens in a new tab). The dead GoFundMe links are gone.
+- Nav: the Donate button (dead GoFundMe link) was replaced by a Contact link.
+- Gallery heading/subtitle now use the same Tailwind classes as the section
+  headings and body text on the other pages: heading = `text-xl font-semibold
+  sm:text-2xl`, subtitle = prose body text (`prose md:prose-lg`). The heading is
+  an <h1 class="not-prose ..."> so the prose plugin's h1 styles don't apply.
+- Contact page (/contact): text and fields (Name, Email, Subject, Message) match
+  valerie-mallory-studio's contact page. ContactForm.svelte and
+  api/contact/+server.ts are copied from it unchanged. The page heading and
+  body text use this site's styles. The form's colors come from the CSS vars in
+  src/app.css (--accent = orange-500, like the site's CTA buttons).
+- Layout: +layout.svelte wraps the page in `flex min-h-dvh flex-col` with the
+  content `flex-1`, so the Footer sits at the bottom of the window on short
+  pages (the 404 page) instead of floating mid-screen. Long pages are unaffected.
+  The 404 page itself is centered and fits a 1440x900 window without scrolling.
+- Theme toggle + Instagram (added 2026-10-11, later the same day): the NavBar has a
+  moon/sun theme button and an Instagram icon (https://www.instagram.com/valerie_mallory/)
+  after the nav links. Same icons and behavior as valerie-mallory-studio: icon-only on
+  desktop, and in the mobile drawer they sit below a separator with labels ("Theme",
+  "@valerie_mallory").
+  - src/lib/theme.svelte.ts is copied unchanged from the studio site (localStorage key
+    'vms-theme'; when nothing is saved it follows the OS light/dark setting). An inline
+    script in src/app.html sets <html data-theme> before first paint, so there's no
+    flash of the wrong theme, and +layout.svelte calls initTheme() on mount.
+  - Dark styles: src/app.css defines `@custom-variant dark` (keyed on
+    data-theme="dark"), dark values for the CSS vars, and maps the prose colors to the
+    typography plugin's invert palette. The few hard-coded light colors have `dark:`
+    variants: the Thanks band (bg-neutral-200), the Footer (bg-stone-500) and the
+    orange-600 links. When adding new markup with hard-coded colors, add a `dark:`
+    class too. Light mode is unchanged.
+
+
+TODO: CONNECT THE CONTACT FORM TO RESEND
+------------------------------------------
+Current state: src/routes/api/contact/+server.ts is the same placeholder as on
+valerie-mallory-studio. It validates name/email/message, then always returns a
+503 with "This form isn't connected yet. Please email us directly at
+valerie@valeriemallory.com." The form shows that message to the visitor.
+
+Recommended setup (one Resend account for all four sites)
+- ONE Resend account handles all four contact forms (valeriemallory.com,
+  womantree.art, playfulagain.org, secretlyabandonedspaces.org). You don't need
+  separate accounts or inboxes. Resend only SENDS mail; it doesn't host an
+  inbox. Submissions arrive in Valerie's existing valerie@valeriemallory.com
+  mailbox.
+- SAME RECIPIENT: yes. All four sites can send to valerie@valeriemallory.com.
+  Once you send from a verified domain, the "to" address can be any address.
+  Set `replyTo` to the visitor's email so that hitting Reply in Valerie's mail
+  app answers the visitor directly. Put the site name in the subject
+  (e.g. "[Playful Again] ...") to tell the four sites apart.
+- SENDING DOMAIN / DNS: you only need DNS records for the domain(s) you send
+  FROM, not for every site's domain. The simplest setup is to verify ONLY
+  valeriemallory.com in Resend and have every site send from an address on it,
+  e.g. from: "Playful Again website <contact@valeriemallory.com>". Visitors never see
+  the from address (the email only goes to Valerie), so nothing is gained by
+  sending from @playfulagain.org. The from address doesn't need to be a real mailbox.
+  - Resend's free plan allows 3 verified domains (Pro, $20/mo, allows 10). So
+    verifying all four domains would need Pro; verifying one domain fits the
+    free plan.
+  - If you do want each site to send from its own domain, all of the domains
+    can live in the same Resend account. Each one needs its own DNS records,
+    added at that domain's registrar/DNS host.
+  - Resend generates the records in Dashboard -> Domains -> Add Domain:
+    a DKIM TXT record (`resend._domainkey`), plus an MX record and an SPF TXT
+    record on the `send` subdomain. Copy the values exactly. Because they sit
+    on `resend._domainkey` and `send.`, they don't change the root MX records,
+    so the valerie@valeriemallory.com mailbox keeps working. Resend recommends
+    sending from a subdomain to protect the root domain's reputation. Adding a
+    `_dmarc` TXT record (start with `v=DMARC1; p=none;`) is also recommended if
+    the domain doesn't have one. Verification usually takes ~15 minutes, but
+    DNS changes can take up to 72 hours.
+- API KEYS: one key COULD be shared by all four sites (a key works for every
+  verified domain in the account). Recommended instead: one key per site,
+  created with "Sending access" permission (restricted to the sending domain if
+  you like) and named after the site (e.g. "playful-again-netlify"). Keys are free. A
+  leaked key can then be revoked without breaking the other three sites, and
+  Resend's logs show which site sent what.
+- Free plan limits (3,000 emails/month, 100/day) are plenty for four contact
+  forms.
+
+Steps (do valerie-mallory-studio first, then repeat here)
+1. `npm install resend`
+2. In Netlify: Site configuration -> Environment variables -> add
+   RESEND_API_KEY (scope must include Functions; the /api/contact route runs as
+   a Netlify Function). Redeploy afterwards, because env vars are read at
+   deploy time. Never commit the key. For local testing, put
+   RESEND_API_KEY=... in a .env file (.env is already gitignored).
+3. Replace the placeholder response in src/routes/api/contact/+server.ts. Keep
+   the existing validation, then:
+
+     import { env } from '$env/dynamic/private';
+     import { Resend } from 'resend';
+
+     const SITE_NAME = 'Playful Again';
+     const TO_EMAIL = 'valerie@valeriemallory.com';
+     const FROM_EMAIL = `${SITE_NAME} website <contact@valeriemallory.com>`;
+
+     // inside POST, after validation:
+     if (!env.RESEND_API_KEY) {
+       return json({ error: `This form isn't connected yet. Please email us directly at ${TO_EMAIL}.` }, { status: 503 });
+     }
+     const resend = new Resend(env.RESEND_API_KEY);
+     const { error } = await resend.emails.send({
+       from: FROM_EMAIL,
+       to: TO_EMAIL,
+       replyTo: email.trim(),
+       subject: `[${SITE_NAME}] ${subject?.trim() || 'New contact form message'}`,
+       text: `Name: ${name.trim()}\nEmail: ${email.trim()}\n\n${message.trim()}`,
+     });
+     if (error) {
+       console.error('Resend error:', error);
+       return json({ error: `Sorry, the message couldn't be sent. Please email us directly at ${TO_EMAIL}.` }, { status: 502 });
+     }
+     return json({ ok: true });
+
+   (Also pull `subject` out of the request body next to name/email/message.)
+   Send as plain `text`, not `html`, so visitor input can't inject markup.
+4. Spam: the endpoint is publicly POST-able. Add a hidden honeypot field to
+   ContactForm.svelte (e.g. "website") and have +server.ts silently return
+   { ok: true } when it's filled in. Consider rate limiting or Cloudflare
+   Turnstile if spam still gets through.
+5. Test: until a domain is verified, Resend's test sender
+   (onboarding@resend.dev) only delivers to the address on your Resend
+   account. After verification, submit the live form and check Valerie's inbox
+   (and spam folder), plus the "Emails" log in the Resend dashboard.

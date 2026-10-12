@@ -53,18 +53,22 @@ src/
 ├── app.html                   Root HTML template; loads Open Sans from Google Fonts
 ├── lib/
 │   ├── components/
-│   │   ├── NavBar.svelte         Fixed top nav; mobile hamburger drawer below 1024px
+│   │   ├── NavBar.svelte         Fixed top nav (+ theme toggle, Instagram); mobile hamburger drawer below 1024px
 │   │   ├── Footer.svelte         Copyright + social links
 │   │   ├── SocialMediaLinks.svelte  Email / Facebook / Instagram icon links
 │   │   ├── Carousel.svelte       Homepage hero — rotates concept-art images on a timer
-│   │   └── DonateNow.svelte      Get Involved / GoFundMe CTA section, reused on every page
+│   │   ├── ThanksForSupport.svelte  "Thanks for your support" section + Visit Our Studio button
+│   │   └── ContactForm.svelte    Contact form (copied from valerie-mallory-studio)
+│   ├── theme.svelte.ts        Light/dark theme state (copied from valerie-mallory-studio)
 │   └── data/
 │       └── team-list.json     Team member names, photos and bios (used on /team)
 ├── routes/
 │   ├── +layout.svelte         Global layout: NavBar, Footer, site meta tags
-│   ├── +page.svelte           Home: hero carousel + intro copy + concept art + Donate CTA
+│   ├── +page.svelte           Home: hero carousel + intro copy + concept art + Thanks for your support section
+│   ├── contact/               Contact page (ContactForm)
+│   ├── api/contact/           POST endpoint for the form (placeholder until Resend is connected — see dev-notes.txt)
 │   ├── team/                  Team grid (photo + bio per member)
-│   └── +error.svelte          404 page (replaces the old Vue catch-all route)
+│   └── +error.svelte          404 page; the layout keeps the Footer at the bottom of the window
 static/
 ├── img/                        Concept art, team photos, hero images (unoptimized originals)
 ├── favicon.png

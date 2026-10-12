@@ -1,6 +1,6 @@
 <script lang="ts">
   import Carousel from '$lib/components/Carousel.svelte';
-  import DonateNow from '$lib/components/DonateNow.svelte';
+  import ThanksForSupport from '$lib/components/ThanksForSupport.svelte';
 </script>
 
 <!-- Hero area -->
@@ -51,7 +51,7 @@
   </div>
 </div>
 
-<!-- Donate Now -->
+<!-- Thanks for your support -->
 <div class="pt-4 lg:pt-12">
-  <DonateNow />
+  <ThanksForSupport />
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DonateNow from '$lib/components/DonateNow.svelte';
+  import ThanksForSupport from '$lib/components/ThanksForSupport.svelte';
   import teamData from '$lib/data/team-list.json';
 
   const team = teamData.team;
@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<!-- Donate Now -->
+<!-- Thanks for your support -->
 <div class="pt-8 lg:pt-12">
-  <DonateNow />
+  <ThanksForSupport />
 </div>

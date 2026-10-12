@@ -11,10 +11,12 @@
   <meta name="description" content="Photos of Playful Again, an art installation at Burning Man 2023 by Valerie Mallory and Mikell Haynes." />
 </svelte:head>
 
-<div class="gallery-page">
-  <div class="page-header">
-    <h1>Gallery</h1>
-    <p class="page-subtitle">Playful Again at Burning Man 2023</p>
+<div class="gallery-page mt-24 lg:mt-32">
+  <div class="prose mx-8 max-w-3xl pt-4 pb-10 lg:mx-auto lg:pb-12 md:prose-lg">
+    <div class="space-y-6 text-center lg:space-y-8">
+      <h1 class="not-prose text-xl font-semibold sm:text-2xl">Gallery</h1>
+      <div>Playful Again at Burning Man 2023</div>
+    </div>
   </div>
   <ImageGallery {photos} layout="justified" width="80vw" maxWidth="2050px" />
   <div class="back-link-wrap">
@@ -26,31 +28,6 @@
   .gallery-page {
     padding-bottom: 3rem;
     min-height: 60vh;
-  }
-
-  /* margin-top clears the fixed nav bar (matches the team page's mt-20) */
-  .page-header {
-    margin-top: 5rem;
-    text-align: center;
-    padding: 3rem 1.5rem 3rem;
-  }
-
-  h1 {
-    margin: 0 0 0.5rem;
-    font-size: 1.75rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-primary);
-  }
-
-  .page-subtitle {
-    margin: 0;
-    font-size: 0.8125rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
   }
 
   .back-link-wrap {

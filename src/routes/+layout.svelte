@@ -1,9 +1,15 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { initTheme } from '$lib/theme.svelte.js';
   import NavBar from '$lib/components/NavBar.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import '../app.css';
 
   let { children } = $props();
+
+  onMount(() => {
+    initTheme();
+  });
 </script>
 
 <svelte:head>
@@ -21,12 +27,17 @@
   <meta property="twitter:description" content="Official site of Playful Again, an art installation at Burning Man 2023 by American contemporary artists Valerie Mallory and Mikell Haynes" />
   <meta property="twitter:image" content="https://playfulagain.org/playful-again-concept-art.jpg" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" />
 </svelte:head>
 
-<NavBar />
+<!-- min-h-dvh + flex-1 keep the Footer at the bottom of the window on short pages (e.g. 404) -->
+<div class="flex min-h-dvh flex-col">
+  <NavBar />
 
-<div class="overflow-hidden">
-  {@render children()}
+  <div class="flex-1 overflow-hidden">
+    {@render children()}
+  </div>
+
+  <Footer />
 </div>
-
-<Footer />
