@@ -1,22 +1,120 @@
 [
   {
-    "id": "bm_2023_img_4198-a",
-    "src": "/img/gallery/bm_2023_img_4198-a.jpg",
-    "alt": "Sculpture of a kneeling woman with long pale hair and a red woven top, seated beside the red steps of the pavilion",
+    "id": "bm_2023_img_4980",
+    "src": "/img/gallery/bm_2023_img_4980.jpg",
+    "alt": "Wide daylight view of the pavilion with standing sculptures on plinths in front of it",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "id": "bm_2023_img_5000",
+    "src": "/img/gallery/bm_2023_img_5000.jpg",
+    "alt": "Side view of the rusted pavilion in daylight with a torch-bearing figure on top and red steps below",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4928-a",
+    "src": "/img/gallery/bm_2023_img_4928-a.jpg",
+    "alt": "Playful Again at dawn, its roof glowing green and red steps leading to the doorway",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4921-a",
+    "src": "/img/gallery/bm_2023_img_4921-a.jpg",
+    "alt": "The illuminated pavilion at dusk with its red steps, the project sign and sculptures arranged around it",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4920",
+    "src": "/img/gallery/bm_2023_img_4920.jpg",
+    "alt": "Playful Again at dusk, surrounded by sculptures and lantern posts with mountains in the distance",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "id": "bm_2023_img_4993",
+    "src": "/img/gallery/bm_2023_img_4993.jpg",
+    "alt": "Sculpted reclining woman in a golden alcove framed by white lace curtains, in daylight",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4997",
+    "src": "/img/gallery/bm_2023_img_4997.jpg",
+    "alt": "The horned figure on a plinth and a crouching sculpture in front of the pavilion in bright sun",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4319",
+    "src": "/img/gallery/bm_2023_img_4319.jpg",
+    "alt": "Night view of the horned figure with its fur-topped staff, lit green, with the moon and city lights behind",
+    "width": 800,
+    "height": 1200
+  },
+  {
+    "id": "bm_2023_img_4340",
+    "src": "/img/gallery/bm_2023_img_4340.jpg",
+    "alt": "A glowing dragon-shaped art car parked in front of the illuminated pavilion at night",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4329",
+    "src": "/img/gallery/bm_2023_img_4329.jpg",
+    "alt": "Playful Again at night, lit green, red and purple, with sculptures around the base and lights across the playa",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "id": "bm_2023_img_4325-a",
+    "src": "/img/gallery/bm_2023_img_4325-a.jpg",
+    "alt": "Close-up of a pale sculpted face peering through dark metal lattice",
     "width": 1200,
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4203",
-    "src": "/img/gallery/bm_2023_img_4203.jpg",
-    "alt": "Looking up inside the pavilion at a draped figure suspended beneath the ornate lattice dome, with painted portraits framing the arched doorway",
+    "id": "bm_2023_img_4940",
+    "src": "/img/gallery/bm_2023_img_4940.jpg",
+    "alt": "Painted portraits of two women framing the arched doorway, with a sculpture visible on the playa at sunset",
+    "width": 1800,
+    "height": 1440
+  },
+  {
+    "id": "bm_2023_img_4995",
+    "src": "/img/gallery/bm_2023_img_4995.jpg",
+    "alt": "Painted portraits on either side of the doorway, framing a view of sculptures out on the playa",
+    "width": 1800,
+    "height": 1440
+  },
+  {
+    "id": "bm_2023_img_4282",
+    "src": "/img/gallery/bm_2023_img_4282.jpg",
+    "alt": "Playful Again silhouetted against a golden sunset on the open playa",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "id": "bm_2023_img_4289",
+    "src": "/img/gallery/bm_2023_img_4289.jpg",
+    "alt": "The pavilion at sunset, its red steps leading to a gold-framed doorway, with a kneeling sculpture beside it",
     "width": 1200,
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4210",
-    "src": "/img/gallery/bm_2023_img_4210.jpg",
-    "alt": "Sculpted reclining woman in an alcove framed by lace curtains, beside a painted portrait of a woman in a dark dress",
+    "id": "bm_2023_img_4254-a",
+    "src": "/img/gallery/bm_2023_img_4254-a.jpg",
+    "alt": "A cloth-draped figure suspended from the lattice dome inside the pavilion, seen from below",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4938",
+    "src": "/img/gallery/bm_2023_img_4938.jpg",
+    "alt": "Inside the pavilion at sunset, a draped hanging figure lit in pink and purple above the doorway",
     "width": 1500,
     "height": 1500
   },
@@ -35,137 +133,11 @@
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4230",
-    "src": "/img/gallery/bm_2023_img_4230.jpg",
-    "alt": "Sculpture of a woman with wild pale hair doing the splits on the playa in front of the pavilion",
-    "width": 1800,
-    "height": 1200
-  },
-  {
-    "id": "bm_2023_img_4233",
-    "src": "/img/gallery/bm_2023_img_4233.jpg",
-    "alt": "Low-angle view of the rusted metal pavilion and its pagoda-style roof, topped by a figure holding a torch aloft",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4254-a",
-    "src": "/img/gallery/bm_2023_img_4254-a.jpg",
-    "alt": "A cloth-draped figure suspended from the lattice dome inside the pavilion, seen from below",
-    "width": 1500,
-    "height": 1500
-  },
-  {
-    "id": "bm_2023_img_4266-a",
-    "src": "/img/gallery/bm_2023_img_4266-a.jpg",
-    "alt": "Front view of Playful Again at dusk, with the moon rising and sculptures kneeling and doing the splits at its base",
-    "width": 1500,
-    "height": 1500
-  },
-  {
-    "id": "bm_2023_img_4275",
-    "src": "/img/gallery/bm_2023_img_4275.jpg",
-    "alt": "Playful Again at dusk with the moon visible, showing the rusted pavilion, red base and figures in front",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4282",
-    "src": "/img/gallery/bm_2023_img_4282.jpg",
-    "alt": "Playful Again silhouetted against a golden sunset on the open playa",
-    "width": 1800,
-    "height": 1200
-  },
-  {
-    "id": "bm_2023_img_4289",
-    "src": "/img/gallery/bm_2023_img_4289.jpg",
-    "alt": "The pavilion at sunset, its red steps leading to a gold-framed doorway, with a kneeling sculpture beside it",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4304",
-    "src": "/img/gallery/bm_2023_img_4304.jpg",
-    "alt": "A visitor posing at the pavilion's red-lit steps at twilight, with green light glowing on the roof",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4307",
-    "src": "/img/gallery/bm_2023_img_4307.jpg",
-    "alt": "Playful Again at twilight, the roof glowing green and the steps lit in red and purple",
-    "width": 1500,
-    "height": 1500
-  },
-  {
-    "id": "bm_2023_img_4308-a",
-    "src": "/img/gallery/bm_2023_img_4308-a.jpg",
-    "alt": "Close view of the pavilion at twilight with green roof lighting and red-lit steps leading to the doorway",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4312",
-    "src": "/img/gallery/bm_2023_img_4312.jpg",
-    "alt": "The pavilion at twilight with lantern posts, green roof lighting and colorful light on the playa",
-    "width": 1500,
-    "height": 1500
-  },
-  {
-    "id": "bm_2023_img_4319",
-    "src": "/img/gallery/bm_2023_img_4319.jpg",
-    "alt": "Night view of the horned figure with its fur-topped staff, lit green, with the moon and city lights behind",
-    "width": 800,
-    "height": 1200
-  },
-  {
-    "id": "bm_2023_img_4325-a",
-    "src": "/img/gallery/bm_2023_img_4325-a.jpg",
-    "alt": "Close-up of a pale sculpted face peering through dark metal lattice",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4329",
-    "src": "/img/gallery/bm_2023_img_4329.jpg",
-    "alt": "Playful Again at night, lit green, red and purple, with sculptures around the base and lights across the playa",
-    "width": 1800,
-    "height": 1200
-  },
-  {
-    "id": "bm_2023_img_4331",
-    "src": "/img/gallery/bm_2023_img_4331.jpg",
-    "alt": "Night view of the pavilion's back, glowing green and blue above a red-lit base with figures at its feet",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4334",
-    "src": "/img/gallery/bm_2023_img_4334.jpg",
-    "alt": "Playful Again glowing in rainbow light at night under the moon, with Black Rock City lights on the horizon",
-    "width": 1800,
-    "height": 1200
-  },
-  {
     "id": "bm_2023_img_4337",
     "src": "/img/gallery/bm_2023_img_4337.jpg",
     "alt": "Close night view of the illuminated pavilion under the moon, light pooling red and purple on the playa",
     "width": 1500,
     "height": 1500
-  },
-  {
-    "id": "bm_2023_img_4340",
-    "src": "/img/gallery/bm_2023_img_4340.jpg",
-    "alt": "A glowing dragon-shaped art car parked in front of the illuminated pavilion at night",
-    "width": 1500,
-    "height": 1500
-  },
-  {
-    "id": "bm_2023_img_4895",
-    "src": "/img/gallery/bm_2023_img_4895.jpg",
-    "alt": "Side view of the rusted pavilion and its ornate roof against a clear blue sky in daylight",
-    "width": 1350,
-    "height": 1800
   },
   {
     "id": "bm_2023_img_4915",
@@ -175,30 +147,9 @@
     "height": 1200
   },
   {
-    "id": "bm_2023_img_4917",
-    "src": "/img/gallery/bm_2023_img_4917.jpg",
-    "alt": "Hooded sculptures gathered in front of the glowing pavilion at sunset",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4919",
-    "src": "/img/gallery/bm_2023_img_4919.jpg",
-    "alt": "Draped sculptures on plinths surrounding the lit pavilion at sunset",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4920",
-    "src": "/img/gallery/bm_2023_img_4920.jpg",
-    "alt": "Playful Again at dusk, surrounded by sculptures and lantern posts with mountains in the distance",
-    "width": 1800,
-    "height": 1200
-  },
-  {
-    "id": "bm_2023_img_4921-a",
-    "src": "/img/gallery/bm_2023_img_4921-a.jpg",
-    "alt": "The illuminated pavilion at dusk with its red steps, the project sign and sculptures arranged around it",
+    "id": "bm_2023_img_4307",
+    "src": "/img/gallery/bm_2023_img_4307.jpg",
+    "alt": "Playful Again at twilight, the roof glowing green and the steps lit in red and purple",
     "width": 1500,
     "height": 1500
   },
@@ -210,27 +161,6 @@
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4924",
-    "src": "/img/gallery/bm_2023_img_4924.jpg",
-    "alt": "A fur-wrapped figure in the foreground with the glowing pavilion behind it at dusk",
-    "width": 1350,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4927",
-    "src": "/img/gallery/bm_2023_img_4927.jpg",
-    "alt": "The horned figure with its staff seen from behind, looking toward the lit pavilion",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4928-a",
-    "src": "/img/gallery/bm_2023_img_4928-a.jpg",
-    "alt": "Playful Again at dawn, its roof glowing green and red steps leading to the doorway",
-    "width": 1500,
-    "height": 1500
-  },
-  {
     "id": "bm_2023_img_4931",
     "src": "/img/gallery/bm_2023_img_4931.jpg",
     "alt": "Sculpted woman with long braided hair seated in a golden alcove, partly draped in fabric",
@@ -238,30 +168,23 @@
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4936",
-    "src": "/img/gallery/bm_2023_img_4936.jpg",
-    "alt": "A draped figure suspended under the dome, lit pink and purple, with the sunset glowing through the arch below",
+    "id": "bm_2023_img_4233",
+    "src": "/img/gallery/bm_2023_img_4233.jpg",
+    "alt": "Low-angle view of the rusted metal pavilion and its pagoda-style roof, topped by a figure holding a torch aloft",
     "width": 1200,
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4938",
-    "src": "/img/gallery/bm_2023_img_4938.jpg",
-    "alt": "Inside the pavilion at sunset, a draped hanging figure lit in pink and purple above the doorway",
-    "width": 1500,
-    "height": 1500
+    "id": "bm_2023_img_4895",
+    "src": "/img/gallery/bm_2023_img_4895.jpg",
+    "alt": "Side view of the rusted pavilion and its ornate roof against a clear blue sky in daylight",
+    "width": 1350,
+    "height": 1800
   },
   {
-    "id": "bm_2023_img_4940",
-    "src": "/img/gallery/bm_2023_img_4940.jpg",
-    "alt": "Painted portraits of two women framing the arched doorway, with a sculpture visible on the playa at sunset",
-    "width": 1800,
-    "height": 1440
-  },
-  {
-    "id": "bm_2023_img_4942",
-    "src": "/img/gallery/bm_2023_img_4942.jpg",
-    "alt": "Hooded figure holding a white orb, with a crouching fur-covered figure behind it",
+    "id": "bm_2023_img_4982",
+    "src": "/img/gallery/bm_2023_img_4982.jpg",
+    "alt": "The pavilion's gold-framed doorway and red steps in bright daylight, with a kneeling figure beside it",
     "width": 1200,
     "height": 1800
   },
@@ -273,34 +196,6 @@
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4949",
-    "src": "/img/gallery/bm_2023_img_4949.jpg",
-    "alt": "Playful Again on the open playa in daylight, a sculpture on a plinth beside it",
-    "width": 1800,
-    "height": 1200
-  },
-  {
-    "id": "bm_2023_img_4980",
-    "src": "/img/gallery/bm_2023_img_4980.jpg",
-    "alt": "Wide daylight view of the pavilion with standing sculptures on plinths in front of it",
-    "width": 1800,
-    "height": 1200
-  },
-  {
-    "id": "bm_2023_img_4982",
-    "src": "/img/gallery/bm_2023_img_4982.jpg",
-    "alt": "The pavilion's gold-framed doorway and red steps in bright daylight, with a kneeling figure beside it",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "id": "bm_2023_img_4984",
-    "src": "/img/gallery/bm_2023_img_4984.jpg",
-    "alt": "Playful Again from a distance in daylight, with mountains on the horizon",
-    "width": 1800,
-    "height": 1200
-  },
-  {
     "id": "bm_2023_img_4992",
     "src": "/img/gallery/bm_2023_img_4992.jpg",
     "alt": "Close-up of a cloth-draped sculpture with a pale face resting against the pavilion steps",
@@ -308,30 +203,114 @@
     "height": 1800
   },
   {
-    "id": "bm_2023_img_4993",
-    "src": "/img/gallery/bm_2023_img_4993.jpg",
-    "alt": "Sculpted reclining woman in a golden alcove framed by white lace curtains, in daylight",
+    "id": "bm_2023_img_4266-a",
+    "src": "/img/gallery/bm_2023_img_4266-a.jpg",
+    "alt": "Front view of Playful Again at dusk, with the moon rising and sculptures kneeling and doing the splits at its base",
     "width": 1500,
     "height": 1500
   },
   {
-    "id": "bm_2023_img_4995",
-    "src": "/img/gallery/bm_2023_img_4995.jpg",
-    "alt": "Painted portraits on either side of the doorway, framing a view of sculptures out on the playa",
+    "id": "bm_2023_img_4230",
+    "src": "/img/gallery/bm_2023_img_4230.jpg",
+    "alt": "Sculpture of a woman with wild pale hair doing the splits on the playa in front of the pavilion",
     "width": 1800,
-    "height": 1440
+    "height": 1200
   },
   {
-    "id": "bm_2023_img_4997",
-    "src": "/img/gallery/bm_2023_img_4997.jpg",
-    "alt": "The horned figure on a plinth and a crouching sculpture in front of the pavilion in bright sun",
+    "id": "bm_2023_img_4198-a",
+    "src": "/img/gallery/bm_2023_img_4198-a.jpg",
+    "alt": "Sculpture of a kneeling woman with long pale hair and a red woven top, seated beside the red steps of the pavilion",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4334",
+    "src": "/img/gallery/bm_2023_img_4334.jpg",
+    "alt": "Playful Again glowing in rainbow light at night under the moon, with Black Rock City lights on the horizon",
+    "width": 1800,
+    "height": 1200
+  },
+  {
+    "id": "bm_2023_img_4331",
+    "src": "/img/gallery/bm_2023_img_4331.jpg",
+    "alt": "Night view of the pavilion's back, glowing green and blue above a red-lit base with figures at its feet",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4936",
+    "src": "/img/gallery/bm_2023_img_4936.jpg",
+    "alt": "A draped figure suspended under the dome, lit pink and purple, with the sunset glowing through the arch below",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4203",
+    "src": "/img/gallery/bm_2023_img_4203.jpg",
+    "alt": "Looking up inside the pavilion at a draped figure suspended beneath the ornate lattice dome, with painted portraits framing the arched doorway",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4924",
+    "src": "/img/gallery/bm_2023_img_4924.jpg",
+    "alt": "A fur-wrapped figure in the foreground with the glowing pavilion behind it at dusk",
+    "width": 1350,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4312",
+    "src": "/img/gallery/bm_2023_img_4312.jpg",
+    "alt": "The pavilion at twilight with lantern posts, green roof lighting and colorful light on the playa",
     "width": 1500,
     "height": 1500
   },
   {
-    "id": "bm_2023_img_5000",
-    "src": "/img/gallery/bm_2023_img_5000.jpg",
-    "alt": "Side view of the rusted pavilion in daylight with a torch-bearing figure on top and red steps below",
+    "id": "bm_2023_img_4304",
+    "src": "/img/gallery/bm_2023_img_4304.jpg",
+    "alt": "A visitor posing at the pavilion's red-lit steps at twilight, with green light glowing on the roof",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4210",
+    "src": "/img/gallery/bm_2023_img_4210.jpg",
+    "alt": "Sculpted reclining woman in an alcove framed by lace curtains, beside a painted portrait of a woman in a dark dress",
+    "width": 1500,
+    "height": 1500
+  },
+  {
+    "id": "bm_2023_img_4942",
+    "src": "/img/gallery/bm_2023_img_4942.jpg",
+    "alt": "Hooded figure holding a white orb, with a crouching fur-covered figure behind it",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4927",
+    "src": "/img/gallery/bm_2023_img_4927.jpg",
+    "alt": "The horned figure with its staff seen from behind, looking toward the lit pavilion",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4919",
+    "src": "/img/gallery/bm_2023_img_4919.jpg",
+    "alt": "Draped sculptures on plinths surrounding the lit pavilion at sunset",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_4917",
+    "src": "/img/gallery/bm_2023_img_4917.jpg",
+    "alt": "Hooded sculptures gathered in front of the glowing pavilion at sunset",
+    "width": 1200,
+    "height": 1800
+  },
+  {
+    "id": "bm_2023_img_5690",
+    "src": "/img/gallery/bm_2023_img_5690.jpg",
+    "alt": "The pavilion beneath wispy clouds and blue sky, with figures gathered at its base",
     "width": 1500,
     "height": 1500
   },
@@ -341,12 +320,5 @@
     "alt": "Playful Again under a dramatic cloudy sky, with sculptures and lantern posts around it",
     "width": 1800,
     "height": 1200
-  },
-  {
-    "id": "bm_2023_img_5690",
-    "src": "/img/gallery/bm_2023_img_5690.jpg",
-    "alt": "The pavilion beneath wispy clouds and blue sky, with figures gathered at its base",
-    "width": 1500,
-    "height": 1500
   }
 ]
