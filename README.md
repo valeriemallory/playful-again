@@ -53,10 +53,10 @@ src/
 ├── app.html                   Root HTML template; loads Open Sans from Google Fonts
 ├── lib/
 │   ├── components/
-│   │   ├── NavBar.svelte         Fixed top nav (+ theme toggle, Instagram); mobile hamburger drawer below 1024px
+│   │   ├── NavBar.svelte         Fixed top nav in the valerie-mallory-studio style (+ theme toggle, Instagram); slide-in drawer below 950px
 │   │   ├── Footer.svelte         Copyright + social links
 │   │   ├── SocialMediaLinks.svelte  Email / Facebook / Instagram icon links
-│   │   ├── Carousel.svelte       Homepage hero — rotates concept-art images on a timer
+│   │   ├── Carousel.svelte       Homepage hero — crossfades static/img/hero images (3:2, or square on portrait phones)
 │   │   ├── ThanksForSupport.svelte  "Thanks for your support" section + Visit Our Studio button
 │   │   └── ContactForm.svelte    Contact form (copied from valerie-mallory-studio)
 │   ├── theme.svelte.ts        Light/dark theme state (copied from valerie-mallory-studio)

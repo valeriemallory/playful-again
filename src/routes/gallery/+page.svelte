@@ -25,34 +25,11 @@
         </div>
     </div>
     <ImageGallery {photos} layout="justified" width="80vw" maxWidth="2050px" />
-    <div class="back-link-wrap">
-        <a href="/" class="back-link">Return to home page</a>
-    </div>
 </div>
 
 <style>
     .gallery-page {
         padding-bottom: 3rem;
         min-height: 60vh;
-    }
-
-    .back-link-wrap {
-        display: flex;
-        justify-content: center;
-        padding: 2rem 1.5rem 4rem;
-    }
-
-    .back-link {
-        font-size: 0.875rem;
-        font-weight: 500;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--text-secondary);
-        text-decoration: none;
-        transition: color 0.2s ease;
-    }
-
-    .back-link:hover {
-        color: var(--accent);
     }
 </style>

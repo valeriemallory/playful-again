@@ -27,7 +27,7 @@
   <meta property="twitter:description" content="Official site of Playful Again, an art installation at Burning Man 2023 by American contemporary artists Valerie Mallory and Mikell Haynes" />
   <meta property="twitter:image" content="https://playfulagain.org/playful-again-concept-art.jpg" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#F8F7F4" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" />
 </svelte:head>
 

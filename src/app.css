@@ -8,7 +8,13 @@
   --text-secondary: #737373; /* neutral-500 */
   --border: #d4d4d4; /* neutral-300: form field borders + gallery image placeholder */
   --surface: #ffffff;
-  --bg: #ffffff;
+  --bg: #F8F7F4; /* cream, same as valerie-mallory-studio */
+  /* Nav bar + text colors, same as valerie-mallory-studio (light theme) */
+  --nav-bg: rgba(248, 247, 244, 0.95);
+  --nav-title: #1A1A18;
+  --nav-text: #605D5B;
+  --nav-accent: #3E7A68;
+  --nav-shadow-scrolled: 0 2px 12px rgba(0, 0, 0, 0.1);
   --accent: #f97316; /* orange-500, same as the site's CTA buttons */
   --accent-hover: #fb923c; /* orange-400 */
 }
@@ -30,6 +36,12 @@ html {
   --text-secondary: #a3a3a3; /* neutral-400 */
   --border: #404040; /* neutral-700 */
   --surface: #262626; /* neutral-800 */
+  /* Nav bar + text colors, same as valerie-mallory-studio (dark theme) */
+  --nav-bg: rgba(13, 14, 12, 0.95);
+  --nav-title: #EDE9E1;
+  --nav-text: #857F76;
+  --nav-accent: #5BC49D;
+  --nav-shadow-scrolled: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Prose text in dark mode: the typography plugin's own "invert" palette
@@ -84,5 +96,19 @@ html {
 @media (min-width: 1024px) {
   .container-inner {
     max-width: 1000px;
+  }
+}
+
+/* Shared wide content container (same as valerie-mallory-studio): full width on
+   mobile, 70% viewport width at >=950px, capped at 2050px. Used by the home hero. */
+.site-container {
+  width: 100%;
+  max-width: 2050px;
+  margin: 0 auto;
+}
+
+@media (min-width: 950px) {
+  .site-container {
+    width: 70vw;
   }
 }

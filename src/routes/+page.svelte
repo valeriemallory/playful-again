@@ -1,11 +1,41 @@
 <script lang="ts">
   import Carousel from '$lib/components/Carousel.svelte';
   import ThanksForSupport from '$lib/components/ThanksForSupport.svelte';
+
+  const heroImages = [
+    {
+      src: '/img/hero/hero_img_01_lg.jpg',
+      srcSm: '/img/hero/hero_img_01_sm.jpg',
+      alt: "Playful Again by day: an ornate pavilion topped by a dancing figure, with cast figures and lamp posts around it on the playa",
+    },
+    {
+      src: '/img/hero/hero_img_02_lg.jpg',
+      srcSm: '/img/hero/hero_img_02_sm.jpg',
+      alt: "Playful Again at dusk, its canopy glowing in rainbow colors above a pool of red light",
+    },
+    {
+      src: '/img/hero/hero_img_03_lg.jpg',
+      srcSm: '/img/hero/hero_img_03_sm.jpg',
+      alt: "Playful Again at night under the moon, its canopy lit in teal and purple",
+    },
+    {
+      src: '/img/hero/hero_concept_art_01_lg.jpg',
+      srcSm: '/img/hero/hero_concept_art_01_sm.jpg',
+      alt: "Concept art for Playful Again: a red and blue carousel-like pavilion topped by a dancing figure on the playa",
+    },
+    {
+      src: '/img/hero/hero_concept_art_02_lg.jpg',
+      srcSm: '/img/hero/hero_concept_art_02_sm.jpg',
+      alt: "Concept art for Playful Again at night, the pavilion lit by spotlights and lamp posts",
+    },
+  ];
 </script>
 
-<!-- Hero area -->
-<div class="pt-[76px] lg:pt-0">
-  <Carousel count={4} intervalMs={15000} />
+<!-- Hero area: same margins as the valerie-mallory-studio home page -->
+<div class="hero">
+  <div class="site-container">
+    <Carousel images={heroImages} intervalMs={15000} />
+  </div>
 </div>
 
 <!-- Welcome -->
@@ -55,3 +85,10 @@
 <div class="pt-4 lg:pt-12">
   <ThanksForSupport />
 </div>
+
+<style>
+  /* 80px clears the fixed nav bar; 2.5rem/1.5rem match the studio home page padding */
+  .hero {
+    padding: calc(80px + 2.5rem) 1.5rem 0;
+  }
+</style>

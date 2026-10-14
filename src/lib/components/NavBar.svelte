@@ -1,8 +1,11 @@
 <script lang="ts">
+  // Layout, colors and drawer copied from valerie-mallory-studio's NavBar.svelte.
+  // Nav colors come from the --nav-* vars in src/app.css (light + dark).
   import { page } from '$app/state';
   import { themeState, toggleTheme } from '$lib/theme.svelte.js';
 
   let isOpen = $state(false);
+  let scrolled = $state(false);
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -21,8 +24,15 @@
     isOpen = false;
   }
 
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    const onScroll = () => { scrolled = window.scrollY > 20; };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  });
 
-  // Close the mobile drawer whenever the route changes
+  // Close the drawer whenever the route changes
   $effect(() => {
     pathname; // track
     isOpen = false;
@@ -31,184 +41,384 @@
 
 <svelte:window onkeydown={(e) => { if (e.key === 'Escape') close(); }} />
 
-<header class="fixed top-0 left-0 z-40 w-full bg-neutral-700/50">
-  <nav class="container-inner mx-auto flex flex-wrap items-center justify-between">
-    <a href="/" onclick={close}>
-      <div class="py-6 text-center text-xl font-semibold text-white sm:text-2xl lg:px-4 lg:py-6">
-        Playful Again
-      </div>
-    </a>
+<header class="navbar" class:scrolled>
+  <div class="nav-inner">
+    <!-- Wordmark -->
+    <a href="/" class="wordmark" aria-label="Playful Again — Home">Playful Again</a>
 
-    <!-- Burger / close button — mobile only -->
-    <div class="relative z-30 block lg:hidden">
+    <!-- Desktop nav -->
+    <nav class="nav-desktop" aria-label="Main navigation">
+      {#each navLinks as link}
+        <a
+          href={link.href}
+          class="nav-link"
+          class:active={isActive(link.href)}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      {/each}
       <button
+        class="icon-btn theme-btn"
+        onclick={toggleTheme}
+        aria-label={themeState.mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+      >
+        {#if themeState.mode === 'light'}
+          <!-- Moon: switch to dark -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        {:else}
+          <!-- Sun: switch to light -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        {/if}
+      </button>
+      <a
+        href="https://www.instagram.com/valerie_mallory/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="icon-btn ig-link"
+        aria-label="Valerie Mallory Art on Instagram"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Mobile controls: burger only — the icons move into the drawer -->
+    <div class="nav-mobile">
+      <button
+        class="burger"
         onclick={() => (isOpen = !isOpen)}
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isOpen}
-        aria-controls="mobile-nav"
-        class="flex items-center"
+        aria-controls="mobile-drawer"
       >
         {#if isOpen}
-          <svg class="h-8 w-8 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
         {:else}
-          <svg class="h-6 w-6 fill-white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="8" x2="21" y2="8"/>
+            <line x1="3" y1="16" x2="21" y2="16"/>
+          </svg>
         {/if}
       </button>
     </div>
-
-    <ul
-      id="mobile-nav"
-      class="nav-btn-container space-y-2 pb-4 font-bold tracking-wide uppercase lg:flex lg:space-y-0 lg:pb-0"
-      class:open={isOpen}
-    >
-      {#each navLinks as link}
-        <li>
-          <a href={link.href} onclick={close} aria-current={isActive(link.href) ? 'page' : undefined}>
-            <div class="nav-btn px-4 py-2 lg:py-3" class:active={isActive(link.href)}>{link.label}</div>
-          </a>
-        </li>
-      {/each}
-
-      <!-- Theme toggle + Instagram: icon-only on desktop; icon + label in the
-           mobile drawer, below a separator (same layout as valerie-mallory-studio) -->
-      <li class="drawer-sep lg:hidden" aria-hidden="true"></li>
-      <li>
-        <button
-          class="nav-btn icon-btn"
-          onclick={toggleTheme}
-          aria-label={themeState.mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-        >
-          {#if themeState.mode === 'light'}
-            <!-- Moon: switch to dark -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-          {:else}
-            <!-- Sun: switch to light -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-          {/if}
-          <span class="lg:hidden">Theme</span>
-        </button>
-      </li>
-      <li>
-        <a
-          href="https://www.instagram.com/valerie_mallory/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav-btn icon-btn"
-          onclick={close}
-          aria-label="Valerie Mallory Art on Instagram"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-          </svg>
-          <span class="ig-handle lg:hidden">@valerie_mallory</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  </div>
 </header>
 
-<!-- Drawer backdrop (mobile only) -->
+<!-- Mobile drawer backdrop -->
 {#if isOpen}
-  <div class="drawer-backdrop lg:hidden" onclick={close} aria-hidden="true"></div>
+  <div class="drawer-backdrop" onclick={close} aria-hidden="true"></div>
 {/if}
 
+<!-- Mobile drawer -->
+<nav
+  id="mobile-drawer"
+  class="drawer"
+  class:open={isOpen}
+  aria-label="Mobile navigation"
+  aria-hidden={!isOpen}
+  inert={!isOpen}
+>
+  <button class="drawer-close" onclick={close} aria-label="Close menu">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  {#each navLinks as link}
+    <a
+      href={link.href}
+      class="drawer-link"
+      class:active={isActive(link.href)}
+      aria-current={isActive(link.href) ? 'page' : undefined}
+      onclick={close}
+    >
+      {link.label}
+    </a>
+  {/each}
+
+  <div class="drawer-sep" aria-hidden="true"></div>
+
+  <!-- Theme toggle -->
+  <button
+    class="drawer-link drawer-btn"
+    onclick={toggleTheme}
+    aria-label={themeState.mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+  >
+    {#if themeState.mode === 'light'}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    {:else}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    {/if}
+    <span>Theme</span>
+  </button>
+
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/valerie_mallory/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="drawer-link"
+    onclick={close}
+    aria-label="Valerie Mallory Art on Instagram"
+  >
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+    </svg>
+    <span>@valerie_mallory</span>
+  </a>
+</nav>
+
 <style>
-  .nav-btn-container {
-    font-size: 1rem;
-    flex: 1 1 auto;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-
-  @media (max-width: 1023px) {
-    .nav-btn-container:not(.open) {
-      display: none;
-    }
-
-    .nav-btn-container.open {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 20;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: stretch;
-      width: 14rem;
-      height: 100vh;
-      padding: 4.25rem 0.625rem 2rem;
-      font-size: 1.25rem;
-      background-color: rgba(0, 0, 0, 0.75);
-    }
-  }
-
-  .drawer-backdrop {
+  .navbar {
     position: fixed;
-    inset: 0;
-    z-index: 30;
-    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    height: 80px;
+    padding: 0 2rem;
+    background: var(--nav-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: none;
+    transition: box-shadow 0.2s ease;
   }
 
-  .nav-btn {
-    color: white;
-    transition: background-color 0.15s ease;
+  .navbar.scrolled {
+    box-shadow: var(--nav-shadow-scrolled);
   }
 
-  .nav-btn:hover,
-  .nav-btn.active {
-    background-color: rgba(115, 115, 115, 0.7); /* neutral-500 */
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  /* Theme toggle + Instagram items */
+
+  .wordmark {
+    font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: var(--nav-title);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .wordmark:hover {
+    color: var(--nav-accent);
+  }
+
+  /* Shrink wordmark when burger is visible to prevent overflow */
+  @media (max-width: 949px) {
+    .wordmark {
+      font-size: 1.05rem;
+    }
+  }
+
+  /* Desktop nav — hidden below 950px */
+  .nav-desktop {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media (min-width: 950px) {
+    .nav-desktop {
+      display: flex;
+    }
+    .nav-mobile {
+      display: none !important;
+    }
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--nav-accent);
+  }
+
+  /* Theme toggle + Instagram icons (studio: ThemeToggle .toggle-btn + .ig-link) */
   .icon-btn {
     display: flex;
     align-items: center;
-    gap: 0.625rem;
-    width: 100%;
-    padding: 0.5rem 1rem;
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
-    font: inherit;
-    letter-spacing: inherit;
-    text-transform: inherit;
-    text-align: left;
+    color: var(--nav-text);
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 4px;
+    transition: color 0.15s ease;
   }
 
-  /* Instagram handle in the drawer: lighter and smaller than the uppercase
-     links so it fits the drawer width; wraps if it still doesn't */
-  .ig-handle {
-    min-width: 0;
-    font-size: 1rem;
+  .theme-btn {
+    padding: 0.375rem;
+  }
+
+  .theme-btn:hover {
+    color: var(--nav-title);
+  }
+
+  .ig-link {
+    padding: 0.25rem;
+  }
+
+  .ig-link:hover {
+    color: var(--nav-accent);
+  }
+
+  /* Mobile controls — burger only */
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .burger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--nav-title);
+    padding: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Drawer backdrop */
+  .drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 48;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Drawer panel */
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 49;
+    width: 16rem;
+    max-width: 85vw;
+    height: 100vh;
+    padding: 5.25rem 1rem 2rem;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .drawer.open {
+    transform: translateX(0);
+  }
+
+  .drawer-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.375rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s ease;
+  }
+
+  .drawer-close:hover {
+    color: #ffffff;
+  }
+
+  .drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 1.125rem;
     font-weight: 400;
-    letter-spacing: normal;
-    text-transform: none;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    border-radius: 4px;
+    min-width: 0;
+  }
+
+  .drawer-link span {
+    min-width: 0;
     overflow-wrap: anywhere;
   }
 
-  .icon-btn svg {
-    flex-shrink: 0;
+  .drawer-link:hover,
+  .drawer-link.active {
+    color: #ffffff;
   }
 
-  @media (min-width: 1024px) {
-    .icon-btn {
-      width: auto;
-      height: 100%;
-      padding: 0.75rem 0.375rem; /* same side padding as the studio site's toggle */
-    }
+  /* Reset button defaults for the theme toggle in the drawer */
+  .drawer-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+  }
+
+  .drawer-link svg {
+    flex-shrink: 0;
   }
 
   .drawer-sep {

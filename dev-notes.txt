@@ -115,6 +115,36 @@ Same changes were made on womantree, playful-again and secretly-abandoned-spaces
     orange-600 links. When adding new markup with hard-coded colors, add a `dark:`
     class too. Light mode is unchanged.
 
+NAV + HERO REDESIGN (2026-10-13)
+----------------------------------
+Same changes on womantree, playful-again and secretly-abandoned-spaces.
+- NavBar.svelte now follows valerie-mallory-studio's NavBar:
+  - Montserrat 600 uppercase wordmark; links in Open Sans 1rem/600, uppercase,
+    0.08em letter spacing, 2rem gaps, with color-only hover/active.
+  - Theme + Instagram icons at the end; translucent bar with blur and a shadow
+    once the page is scrolled.
+  - Below the breakpoint: a two-line burger and a slide-in drawer with its own X.
+    Drawer links are in sentence case at weight 400, with a 1px separator above
+    Theme and @valerie_mallory.
+  - The colors come from the --nav-* vars in src/app.css (--nav-bg, --nav-title,
+    --nav-text, --nav-accent, --nav-shadow-scrolled), with the studio's light and
+    dark values. They're separate from --accent (orange), which the CTA buttons
+    and the contact form still use.
+  - Montserrat is loaded in src/app.html.
+- Light theme page background is the studio's cream, #F8F7F4 (--bg). Dark theme
+  background is unchanged.
+- Home hero: Carousel.svelte is based on the studio carousel (crossfade, arrows
+  on hover, 4px corners). It sits inside .site-container (src/app.css, same as
+  the studio: full width on mobile, 70vw at >=950px, max 2050px) with the studio
+  home page's padding.
+  - Images are listed in heroImages in src/routes/+page.svelte, in this order:
+    the static/img/hero/hero_img_01-03 photos first, then hero_concept_art_01-02.
+  - Each image has a 3:2 "_lg" file and a square "_sm" file. Portrait phones and
+    tablets ((max-width: 949px) and (orientation: portrait)) get the square image
+    in a square frame. Landscape and desktop get the 3:2 image in a 3:2 frame.
+  - The old static/img/ui/hero-NN-lg/sm.jpg images are no longer used.
+    TODO: delete them if they're not wanted.
+
 
 TODO: CONNECT THE CONTACT FORM TO RESEND
 ------------------------------------------
