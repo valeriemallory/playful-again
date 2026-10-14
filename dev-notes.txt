@@ -145,6 +145,22 @@ Same changes on womantree, playful-again and secretly-abandoned-spaces.
   - The old static/img/ui/hero-NN-lg/sm.jpg images are no longer used.
     TODO: delete them if they're not wanted.
 
+CONCEPT ART GALLERY (2026-10-14)
+----------------------------------
+- /gallery now shows a second "Concept Art" gallery below the photos, the same
+  setup as secretly-abandoned-spaces. Both galleries share static/img/gallery:
+  - bm_* files go to src/lib/data/gallery-photos.json;
+  - concept_art_* files go to src/lib/data/gallery-concept-art.json, in filename order.
+- scripts/gen-image-data.js splits the folder with each section's `include` regex.
+  The photo section's `exclude` lists the photos deliberately left out of the
+  gallery (bm_2023_img_4275, 4308-a, 4949 and 4984), so `npm run gen` no longer re-adds them. .gif was added to the
+  supported extensions.
+- gen-image-data.js writes LF line endings, while the checkout uses CRLF. After
+  running it, git may show whole-file diffs that are line endings only.
+- concept_art_img_10-12 are animated GIFs (6/28/14 frames), and _01/_02/_12 are
+  4096px wide (1-2MB each). They work as-is; they're candidates for the
+  image-optimization TODO.
+
 
 TODO: CONNECT THE CONTACT FORM TO RESEND
 ------------------------------------------

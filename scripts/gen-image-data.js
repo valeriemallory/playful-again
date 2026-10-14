@@ -7,7 +7,8 @@
 //   - existing entries keep their alt text and gallery order (dimensions are refreshed)
 //   - new images in the folder are appended to the end with an empty alt (fill these in)
 //   - entries whose image file no longer exists are removed
-//   - files matching a section's optional `exclude` regex are skipped
+//   - only files matching a section's optional `include` regex are used, and
+//     files matching its optional `exclude` regex are skipped (both match the name without extension)
 // To reorder a gallery, reorder the entries in its JSON file by hand.
 import sharp from 'sharp';
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
@@ -17,11 +18,25 @@ import { fileURLToPath } from 'url';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const root = join(__dirname, '..');
 
+// Both galleries share static/img/gallery and are split by file-name prefix.
 const sections = [
-  { folder: 'static/img/gallery', output: 'src/lib/data/gallery.json', urlBase: '/img/gallery' },
+  {
+    folder: 'static/img/gallery',
+    output: 'src/lib/data/gallery-photos.json',
+    urlBase: '/img/gallery',
+    include: /^bm_2023_/,
+    // Deliberately left out of the photo gallery (the files are kept in the folder)
+    exclude: /^bm_2023_img_(4275|4308-a|4949|4984)$/,
+  },
+  {
+    folder: 'static/img/gallery',
+    output: 'src/lib/data/gallery-concept-art.json',
+    urlBase: '/img/gallery',
+    include: /^concept_art_/,
+  },
 ];
 
-const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
+const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.gif']);
 
 async function readExisting(path) {
   try {
@@ -50,6 +65,7 @@ for (const section of sections) {
 
   const files = (await readdir(folderPath))
     .filter(f => IMAGE_EXTS.has(parse(f).ext.toLowerCase()))
+    .filter(f => !section.include || section.include.test(parse(f).name))
     .filter(f => !section.exclude?.test(parse(f).name))
     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 

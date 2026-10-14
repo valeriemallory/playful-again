@@ -1,0 +1,86 @@
+[
+  {
+    "id": "concept_art_img_01",
+    "src": "/img/gallery/concept_art_img_01.jpg",
+    "alt": "Concept art of Playful Again by day: a pink and turquoise carousel-like pavilion topped by a dancing figure, with winged figures and lamp posts on the playa",
+    "width": 4096,
+    "height": 2304
+  },
+  {
+    "id": "concept_art_img_02",
+    "src": "/img/gallery/concept_art_img_02.jpg",
+    "alt": "Concept art of Playful Again at night, the pavilion lit by spotlights and lamp posts",
+    "width": 4096,
+    "height": 2304
+  },
+  {
+    "id": "concept_art_img_03",
+    "src": "/img/gallery/concept_art_img_03.jpg",
+    "alt": "Concept art of a wooden, pagoda-style version of the pavilion at night, with a figure on an aerial hoop inside and a dancing figure on top",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "id": "concept_art_img_04",
+    "src": "/img/gallery/concept_art_img_04.png",
+    "alt": "Line drawing of the ornate pavilion, with scrollwork, arched windows and a central doorway",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "id": "concept_art_img_05",
+    "src": "/img/gallery/concept_art_img_05.png",
+    "alt": "Rendering of the ornate pavilion in mauve tones, with a figure standing in the doorway and a dancing figure on top",
+    "width": 512,
+    "height": 640
+  },
+  {
+    "id": "concept_art_img_06",
+    "src": "/img/gallery/concept_art_img_06.jpg",
+    "alt": "Design for a wooden geodesic dome with hexagonal openings",
+    "width": 1116,
+    "height": 985
+  },
+  {
+    "id": "concept_art_img_07",
+    "src": "/img/gallery/concept_art_img_07.jpg",
+    "alt": "Sepia drawing of a kneeling woman with curling ram's horns, her arms crossed over her chest",
+    "width": 406,
+    "height": 643
+  },
+  {
+    "id": "concept_art_img_08",
+    "src": "/img/gallery/concept_art_img_08.jpg",
+    "alt": "Sepia drawing of a figure performing on an aerial hoop beneath three seated figures",
+    "width": 504,
+    "height": 720
+  },
+  {
+    "id": "concept_art_img_09",
+    "src": "/img/gallery/concept_art_img_09.jpg",
+    "alt": "Sepia drawing of a nude woman with large bat-like wings",
+    "width": 936,
+    "height": 936
+  },
+  {
+    "id": "concept_art_img_10",
+    "src": "/img/gallery/concept_art_img_10.gif",
+    "alt": "Animated rendering of the pink and turquoise pavilion by day, with winged figures and lamp posts around it",
+    "width": 1224,
+    "height": 1152
+  },
+  {
+    "id": "concept_art_img_11",
+    "src": "/img/gallery/concept_art_img_11.gif",
+    "alt": "Animated rendering of the Playful Again play area by day: the pavilion with a seesaw, a merry-go-round, a rocking horse and a geodesic dome",
+    "width": 2088,
+    "height": 1175
+  },
+  {
+    "id": "concept_art_img_12",
+    "src": "/img/gallery/concept_art_img_12.gif",
+    "alt": "Animated rendering of the wooden, pagoda-style pavilion at night on the playa",
+    "width": 4096,
+    "height": 2304
+  }
+]
