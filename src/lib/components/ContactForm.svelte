@@ -3,6 +3,7 @@
   let email = $state('');
   let subject = $state('');
   let message = $state('');
+  let website = $state(''); // honeypot: hidden from people, only bots fill it in
   let status = $state<'idle' | 'sending' | 'success' | 'error'>('idle');
   let errorMessage = $state('');
 
@@ -16,14 +17,14 @@
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, email, subject, message, website }),
       });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to send message.');
 
       status = 'success';
-      name = email = subject = message = '';
+      name = email = subject = message = website = '';
     } catch (err) {
       status = 'error';
       errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred.';
@@ -46,6 +47,13 @@
   </div>
 {:else}
   <form class="contact-form" onsubmit={handleSubmit} novalidate>
+    <!-- Honeypot field for spam bots: moved off-screen and skipped by keyboard
+         and screen readers. The server drops any message that fills it in. -->
+    <div class="hp-field" aria-hidden="true">
+      <label for="cf-website">Website</label>
+      <input id="cf-website" type="text" bind:value={website} tabindex="-1" autocomplete="off" />
+    </div>
+
     <div class="field">
       <label for="cf-name">Name <span aria-hidden="true">*</span></label>
       <input
@@ -110,6 +118,14 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+  }
+
+  .hp-field {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 
   .field {

@@ -162,96 +162,26 @@ CONCEPT ART GALLERY (2026-10-14)
   image-optimization TODO.
 
 
-TODO: CONNECT THE CONTACT FORM TO RESEND
-------------------------------------------
-Current state: src/routes/api/contact/+server.ts is the same placeholder as on
-valerie-mallory-studio. It validates name/email/message, then always returns a
-503 with "This form isn't connected yet. Please email us directly at
-valerie@valeriemallory.com." The form shows that message to the visitor.
-
-Recommended setup (one Resend account for all four sites)
-- ONE Resend account handles all four contact forms (valeriemallory.com,
-  womantree.art, playfulagain.org, secretlyabandonedspaces.org). You don't need
-  separate accounts or inboxes. Resend only SENDS mail; it doesn't host an
-  inbox. Submissions arrive in Valerie's existing valerie@valeriemallory.com
-  mailbox.
-- SAME RECIPIENT: yes. All four sites can send to valerie@valeriemallory.com.
-  Once you send from a verified domain, the "to" address can be any address.
-  Set `replyTo` to the visitor's email so that hitting Reply in Valerie's mail
-  app answers the visitor directly. Put the site name in the subject
-  (e.g. "[Playful Again] ...") to tell the four sites apart.
-- SENDING DOMAIN / DNS: you only need DNS records for the domain(s) you send
-  FROM, not for every site's domain. The simplest setup is to verify ONLY
-  valeriemallory.com in Resend and have every site send from an address on it,
-  e.g. from: "Playful Again website <contact@valeriemallory.com>". Visitors never see
-  the from address (the email only goes to Valerie), so nothing is gained by
-  sending from @playfulagain.org. The from address doesn't need to be a real mailbox.
-  - Resend's free plan allows 3 verified domains (Pro, $20/mo, allows 10). So
-    verifying all four domains would need Pro; verifying one domain fits the
-    free plan.
-  - If you do want each site to send from its own domain, all of the domains
-    can live in the same Resend account. Each one needs its own DNS records,
-    added at that domain's registrar/DNS host.
-  - Resend generates the records in Dashboard -> Domains -> Add Domain:
-    a DKIM TXT record (`resend._domainkey`), plus an MX record and an SPF TXT
-    record on the `send` subdomain. Copy the values exactly. Because they sit
-    on `resend._domainkey` and `send.`, they don't change the root MX records,
-    so the valerie@valeriemallory.com mailbox keeps working. Resend recommends
-    sending from a subdomain to protect the root domain's reputation. Adding a
-    `_dmarc` TXT record (start with `v=DMARC1; p=none;`) is also recommended if
-    the domain doesn't have one. Verification usually takes ~15 minutes, but
-    DNS changes can take up to 72 hours.
-- API KEYS: one key COULD be shared by all four sites (a key works for every
-  verified domain in the account). Recommended instead: one key per site,
-  created with "Sending access" permission (restricted to the sending domain if
-  you like) and named after the site (e.g. "playful-again-netlify"). Keys are free. A
-  leaked key can then be revoked without breaking the other three sites, and
-  Resend's logs show which site sent what.
-- Free plan limits (3,000 emails/month, 100/day) are plenty for four contact
-  forms.
-
-Steps (do valerie-mallory-studio first, then repeat here)
-1. `npm install resend`
-2. In Netlify: Site configuration -> Environment variables -> add
-   RESEND_API_KEY (scope must include Functions; the /api/contact route runs as
-   a Netlify Function). Redeploy afterwards, because env vars are read at
-   deploy time. Never commit the key. For local testing, put
-   RESEND_API_KEY=... in a .env file (.env is already gitignored).
-3. Replace the placeholder response in src/routes/api/contact/+server.ts. Keep
-   the existing validation, then:
-
-     import { env } from '$env/dynamic/private';
-     import { Resend } from 'resend';
-
-     const SITE_NAME = 'Playful Again';
-     const TO_EMAIL = 'valerie@valeriemallory.com';
-     const FROM_EMAIL = `${SITE_NAME} website <contact@valeriemallory.com>`;
-
-     // inside POST, after validation:
-     if (!env.RESEND_API_KEY) {
-       return json({ error: `This form isn't connected yet. Please email us directly at ${TO_EMAIL}.` }, { status: 503 });
-     }
-     const resend = new Resend(env.RESEND_API_KEY);
-     const { error } = await resend.emails.send({
-       from: FROM_EMAIL,
-       to: TO_EMAIL,
-       replyTo: email.trim(),
-       subject: `[${SITE_NAME}] ${subject?.trim() || 'New contact form message'}`,
-       text: `Name: ${name.trim()}\nEmail: ${email.trim()}\n\n${message.trim()}`,
-     });
-     if (error) {
-       console.error('Resend error:', error);
-       return json({ error: `Sorry, the message couldn't be sent. Please email us directly at ${TO_EMAIL}.` }, { status: 502 });
-     }
-     return json({ ok: true });
-
-   (Also pull `subject` out of the request body next to name/email/message.)
-   Send as plain `text`, not `html`, so visitor input can't inject markup.
-4. Spam: the endpoint is publicly POST-able. Add a hidden honeypot field to
-   ContactForm.svelte (e.g. "website") and have +server.ts silently return
-   { ok: true } when it's filled in. Consider rate limiting or Cloudflare
-   Turnstile if spam still gets through.
-5. Test: until a domain is verified, Resend's test sender
-   (onboarding@resend.dev) only delivers to the address on your Resend
-   account. After verification, submit the live form and check Valerie's inbox
-   (and spam folder), plus the "Emails" log in the Resend dashboard.
+Contact Form (connected to Resend 2026-10-14)
+----------------------------------------------
+src/routes/api/contact/+server.ts validates the form and emails it to
+valerie@valeriemallory.com through Resend (`resend` npm package).
+- Sender: "Playful Again website <contact@valeriemallory.com>". The
+  valeriemallory.com domain is verified in Resend, with the DNS records in
+  Netlify DNS. The from address doesn't need a real mailbox.
+- Subject: "[Playful Again] <visitor's subject>", or "... Message from
+  <name>" if the subject is blank.
+- Reply-to: the visitor's email, so Reply in Valerie's mail app answers them.
+- Plain-text body, with a "Sent from the contact form at ..." footer.
+- API key: RESEND_API_KEY. Locally it's in .env (gitignored); in production it's
+  in Netlify (Site configuration -> Environment variables, scope must include
+  Functions). Redeploy after changing it. Each of the four sites has its own
+  "Sending access" key in the one Resend account (valeriemalloryart@gmail.com),
+  named netlify-<site> (this one: netlify-playful-again).
+- With no key set, the endpoint returns 503 "This form isn't connected yet...".
+- Spam: ContactForm.svelte has a hidden honeypot field ("website"); messages
+  that fill it in get a fake success response and aren't sent. Lengths are capped.
+- Resend free plan: 3,000 emails/month, 100/day. The Emails tab in the Resend
+  dashboard shows each send and its delivery status.
+- +server.ts and ContactForm.svelte are copied from valerie-mallory-studio;
+  all four sites use the same files, and only SITE_NAME/SITE_URL differ.
