@@ -103,10 +103,10 @@
 <div class="container-inner pt-12 pb-2">
     <HighlightImages
         images={aboutImages}
-        rows={[2]}
+        rows={[2, 2]}
         width="100%"
         mobileWidth="100%"
-        gap={24}
+        gap={{ mobile: 12, desktop: 24 }}
     />
 </div>
 
@@ -179,7 +179,7 @@
         rows={[3, 2]}
         width="100%"
         mobileWidth="100%"
-        gap={24}
+        gap={{ mobile: 12, desktop: 24 }}
     />
 </div>
 

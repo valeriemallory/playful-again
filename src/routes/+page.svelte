@@ -121,7 +121,7 @@
         rows={[2, 2]}
         width="100%"
         mobileWidth="100%"
-        gap={24}
+        gap={{ mobile: 12, desktop: 24 }}
     />
 </div>
 
@@ -151,7 +151,7 @@
         rows={[3]}
         width="100%"
         mobileWidth="100%"
-        gap={18}
+        gap={{ mobile: 12, desktop: 24 }}
     />
 </div>
 
