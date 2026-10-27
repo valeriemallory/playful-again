@@ -7,33 +7,68 @@
     // Highlight images below the About the Installation and Design sections, in display order
     const aboutImages: HighlightImage[] = [
         {
-            id: "concept-art-01",
-            src: "/img/ui/home-concept-art-01.jpg",
-            alt: "Concept art for a crouching angel figure",
+            id: "about-img-01",
+            src: "/img/ui/about_img_01.jpg",
+            alt: "Front view of Playful Again at dusk, with the moon rising and sculptures kneeling and doing the splits at its base",
             width: 450,
             height: 450,
         },
         {
-            id: "concept-art-02",
-            src: "/img/ui/home-concept-art-02.jpg",
-            alt: "Concept art for a spinning 'human chandelier'",
+            id: "about-img-02",
+            src: "/img/ui/about_img_02.jpg",
+            alt: "A cloth-draped figure suspended from the lattice dome inside the pavilion, seen from below",
             width: 450,
+            height: 450,
+        },
+        {
+            id: "about-img-03",
+            src: "/img/ui/about_img_03.jpg",
+            alt: "Painted portraits of two women framing the arched doorway, with a sculpture visible on the playa at sunset",
+            width: 563,
+            height: 450,
+        },
+        {
+            id: "about-img-04",
+            src: "/img/ui/about_img_04.jpg",
+            alt: "Night view of the horned figure with its fur-topped staff, lit green, with the moon and city lights behind",
+            width: 300,
             height: 450,
         },
     ];
 
     const designImages: HighlightImage[] = [
         {
-            id: "concept-art-03",
-            src: "/img/ui/home-concept-art-03.jpg",
-            alt: "Concept art for a kneeling woman with a curly ram-like horns on her head",
+            id: "concept-art-01",
+            src: "/img/ui/playful_again_concept_art_01.jpg",
+            alt: "Sepia drawing of a nude woman with large bat-like wings",
             width: 450,
             height: 450,
         },
         {
+            id: "concept-art-02",
+            src: "/img/ui/playful_again_concept_art_02.jpg",
+            alt: "Concept art for a spinning 'human chandelier'",
+            width: 300,
+            height: 450,
+        },
+        {
+            id: "concept-art-03",
+            src: "/img/ui/playful_again_concept_art_03.jpg",
+            alt: "Concept art for a kneeling woman with a curly ram-like horns on her head",
+            width: 300,
+            height: 450,
+        },
+        {
             id: "concept-art-04",
-            src: "/img/ui/home-concept-art-04.jpg",
-            alt: "Concept art for a woman standing, unfurling a set of bat-like wings",
+            src: "/img/ui/playful_again_concept_art_04.jpg",
+            alt: "Concept art of the wooden, pagoda-style pavilion at night on the playa",
+            width: 450,
+            height: 450,
+        },
+        {
+            id: "concept-art-05",
+            src: "/img/ui/playful_again_concept_art_05.jpg",
+            alt: "Concept art of Playful Again at night, the pavilion lit by spotlights and lamp posts",
             width: 450,
             height: 450,
         },
@@ -54,9 +89,13 @@
             About the Installation
         </h1>
         <div>
-            Playful Again is a large-scale art installation coming to Burning
-            Man 2023. The piece is an invitation to reconnect to the childlike
-            joy and wonder that comes from the pure act of play.
+            Playful Again is a large-scale art installation created for Burning
+            Man 2023 by artist and sculptor Valerie Mallory and illustrator and
+            concept designer Mikell Haynes.
+        </div>
+        <div>
+            The piece is an invitation to reconnect to the childlike joy and
+            wonder that comes from the pure act of play.
         </div>
     </div>
 </div>
@@ -97,7 +136,7 @@
 </div>
 <div class="container-inner mx-auto pt-8 lg:pt-10 lg:pb-2">
     <img
-        src="/img/ui/home-concept-playground-wide.gif"
+        src="/img/ui/playful_again_concept_playground_wide.gif"
         alt="Concept art of the playground with spinning figures"
     />
 </div>
@@ -127,7 +166,7 @@
 <div class="container-inner pt-12 pb-6">
     <HighlightImages
         images={designImages}
-        rows={[2]}
+        rows={[3, 2]}
         width="100%"
         mobileWidth="100%"
         gap={24}
