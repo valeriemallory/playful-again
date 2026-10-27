@@ -10,10 +10,6 @@
 
 <svelte:head>
     <title>Gallery — Playful Again</title>
-    <meta
-        name="description"
-        content="Photos of Playful Again, an art installation at Burning Man 2023 by Valerie Mallory and Mikell Haynes."
-    />
 </svelte:head>
 
 <div class="gallery-page mt-24 lg:mt-32">
