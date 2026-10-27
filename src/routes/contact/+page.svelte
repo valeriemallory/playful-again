@@ -1,10 +1,12 @@
 <script lang="ts">
+    import PageMeta from "$lib/components/PageMeta.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
 </script>
 
-<svelte:head>
-    <title>Contact — Playful Again</title>
-</svelte:head>
+<PageMeta
+    title="Contact — Playful Again"
+    description="Get in touch with the team behind Playful Again, an art installation at Burning Man 2023 by Valerie Mallory and Mikell Haynes."
+/>
 
 <div class="prose mx-8 mt-24 max-w-3xl py-4 lg:mx-auto lg:mt-32 md:prose-lg">
     <div class="space-y-6 text-center lg:space-y-8">

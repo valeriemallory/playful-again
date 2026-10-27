@@ -1,13 +1,15 @@
 <script lang="ts">
+  import PageMeta from '$lib/components/PageMeta.svelte';
   import ThanksForSupport from '$lib/components/ThanksForSupport.svelte';
   import teamData from '$lib/data/team-list.json';
 
   const team = teamData.team;
 </script>
 
-<svelte:head>
-  <title>Team — Playful Again</title>
-</svelte:head>
+<PageMeta
+  title="Team — Playful Again"
+  description="Meet the artists, builders and crew behind Playful Again, an art installation at Burning Man 2023 by Valerie Mallory and Mikell Haynes."
+/>
 
 <!-- Hero area -->
 <div class="container-inner prose mx-auto mt-20 py-12 text-center text-xl font-semibold sm:text-2xl">Team</div>

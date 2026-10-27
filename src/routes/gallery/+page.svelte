@@ -1,4 +1,5 @@
 <script lang="ts">
+    import PageMeta from "$lib/components/PageMeta.svelte";
     import ImageGallery from "$lib/components/ImageGallery.svelte";
     import photoData from "$lib/data/gallery-photos.json";
     import conceptArtData from "$lib/data/gallery-concept-art.json";
@@ -8,9 +9,10 @@
     const conceptArt = conceptArtData as Photo[];
 </script>
 
-<svelte:head>
-    <title>Gallery — Playful Again</title>
-</svelte:head>
+<PageMeta
+    title="Gallery — Playful Again"
+    description="Photos and concept art for Playful Again, an art installation at Burning Man 2023 by Valerie Mallory and Mikell Haynes."
+/>
 
 <div class="gallery-page mt-24 lg:mt-32">
     <div

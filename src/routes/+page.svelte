@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PageMeta from '$lib/components/PageMeta.svelte';
   import Carousel from '$lib/components/Carousel.svelte';
   import ThanksForSupport from '$lib/components/ThanksForSupport.svelte';
   import HighlightImages from '$lib/components/HighlightImages.svelte';
@@ -67,6 +68,11 @@
     },
   ];
 </script>
+
+<PageMeta
+  title="Playful Again | Burning Man 2023"
+  description="Official site of Playful Again, an art installation at Burning Man 2023 by American contemporary artists Valerie Mallory and Mikell Haynes"
+/>
 
 <!-- Hero area: same margins as the valerie-mallory-studio home page -->
 <div class="hero">
