@@ -8,6 +8,9 @@
     // `rows` lists how many images go in each row, in order — e.g. [2] (1x2),
     // [2, 2] (2x2), [3, 3] or [2, 2, 2] (6 images), [3, 3, 3] (3x3), [2, 1, 2].
     // Leave it out for a balanced default (up to 3 per row).
+    // `gap` is one number for every screen size, or set mobile and desktop
+    // separately: gap={{ mobile: 12, desktop: 24 }}. Like width/mobileWidth,
+    // "mobile" means below 950px.
     interface Props {
         images: HighlightImage[];
         rows?: number[];
@@ -17,9 +20,12 @@
         mobileWidth?: string;
         /** No row grows taller than this; a taller row is narrowed and centered */
         maxRowHeight?: number;
-        /** Space between images, in px */
-        gap?: number;
+        /** Space between images, in px: one number, or { mobile, desktop }
+         *  (a missing key uses the other one's value) */
+        gap?: number | { mobile?: number; desktop?: number };
     }
+
+    const DEFAULT_GAP = 5;
 
     let {
         images,
@@ -27,8 +33,15 @@
         width = "60vw",
         mobileWidth = "80vw",
         maxRowHeight = 500,
-        gap = 5,
+        gap = DEFAULT_GAP,
     }: Props = $props();
+
+    const desktopGap = $derived(
+        typeof gap === "number" ? gap : (gap.desktop ?? gap.mobile ?? DEFAULT_GAP),
+    );
+    const mobileGap = $derived(
+        typeof gap === "number" ? gap : (gap.mobile ?? gap.desktop ?? DEFAULT_GAP),
+    );
 
     // Balanced default: as few rows as possible (max 3 images per row), with the
     // larger rows first — 4 → [2, 2], 5 → [3, 2], 7 → [3, 2, 2], 8 → [3, 3, 2].
@@ -85,7 +98,7 @@
      maxRowHeight x (sum of ratios) + gaps caps its height without cropping. -->
 <div
     class="highlight-images"
-    style="--hl-width: {width}; --hl-mobile-width: {mobileWidth}; --hl-max-row-height: {maxRowHeight}px; --hl-gap: {gap}px;"
+    style="--hl-width: {width}; --hl-mobile-width: {mobileWidth}; --hl-max-row-height: {maxRowHeight}px; --hl-gap-desktop: {desktopGap}px; --hl-gap-mobile: {mobileGap}px;"
 >
     {#each layout as row, r (r)}
         <div
@@ -116,6 +129,7 @@
 
 <style>
     .highlight-images {
+        --hl-gap: var(--hl-gap-desktop);
         width: var(--hl-width);
         margin: 0 auto;
         display: flex;
@@ -149,9 +163,10 @@
         -webkit-user-select: none;
     }
 
-    /* Phones and small tablets: wider block (950px matches .site-container in app.css) */
+    /* Phones and small tablets: mobile width and gap (950px matches .site-container in app.css) */
     @media (max-width: 949px) {
         .highlight-images {
+            --hl-gap: var(--hl-gap-mobile);
             width: var(--hl-mobile-width);
         }
     }
