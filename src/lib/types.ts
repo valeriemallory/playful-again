@@ -22,3 +22,11 @@ export interface PortfolioSection {
   imageSrc: string;
   description?: string;
 }
+
+// One image in a HighlightImages layout. `srcSm`/`widthSm`/`heightSm` are an
+// optional smaller (usually square) version shown on phones in portrait.
+export interface HighlightImage extends Photo {
+  srcSm?: string;
+  widthSm?: number;
+  heightSm?: number;
+}
