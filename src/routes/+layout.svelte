@@ -11,7 +11,7 @@
   // Absolute URLs for search engines and social previews. The origin is fixed so
   // Netlify deploy previews still point at the live site.
   const siteUrl = 'https://playfulagain.org';
-  const previewImage = `${siteUrl}/playful-again-site-preview.jpg`;
+  const previewImage = `${siteUrl}/playful_again_site_preview.jpg`;
   const previewImageAlt =
     'Playful Again at dusk on the playa at Burning Man: an ornate pavilion with a glowing canopy, surrounded by cast figures and lamp posts';
   const pageUrl = $derived(siteUrl + page.url.pathname);

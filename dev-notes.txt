@@ -22,7 +22,7 @@ was itself converted the same way). Notes on what changed and why:
   (about-overview.jpg, concept-art-*.jpg, cast-figure-*.jpg, design-*.jpg)
   were deleted from static/img/ (still in git history, and the old pages
   in legacy-site/ still reference them by their old src/assets/ paths).
-- Also unused (carried over from the old src/assets/): team-pic-07a.jpg and
+- Also unused (carried over from the old src/assets/): team_pic_07a.jpg and
   home-concept-playground-square.gif.
 - Nav breakpoint: the old header used two different breakpoints (Tailwind's
   `lg:` at 1024px to show/hide the burger, plus a separate custom @media

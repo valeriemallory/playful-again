@@ -26,7 +26,7 @@ const sections = [
     urlBase: '/img/gallery',
     include: /^bm_2023_/,
     // Deliberately left out of the photo gallery (the files are kept in the folder)
-    exclude: /^bm_2023_img_(4275|4308-a|4949|4984)$/,
+    exclude: /^bm_2023_img_(4275|4308_a|4949|4984)$/,
   },
   {
     folder: 'static/img/gallery',

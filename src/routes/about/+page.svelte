@@ -94,8 +94,9 @@
             concept designer Mikell Haynes.
         </div>
         <div>
-            The piece is an invitation to reconnect to the childlike joy and
-            wonder that comes from the pure act of play.
+            Inspired by the spirit of childhood, the piece invites us to set
+            aside the cares of adulthood and rediscover the simple delight of
+            playing for its own sake.
         </div>
     </div>
 </div>
@@ -116,29 +117,38 @@
             Philosophy
         </div>
         <div>
-            When we were children, we loved to play. Life was magical when we
-            were at play — we could create anything and everything we imagined
-            was so very real. We learned to use our hands, interact with each
-            other and explore the world through play.
+            Think back to childhood, when play was the center of our world. Sand
+            could become a castle, a backyard a faraway kingdom, and whatever we
+            dreamed up felt completely real. Play was how we learned — how we
+            discovered what our hands could do, how we connected with one
+            another, and how we came to understand the world around us.
         </div>
         <div>
-            Sadly, as adults we have limited time for play. We forget to be
-            ourselves. We forget our innocence and lose the practice of seeing
-            life without filters. We lose our connection to joy and live with
-            the fear of expectations and criticism. Life becomes full of
-            judgment and consequences.
+            Sadly, as we grow older, play slips quietly out of our lives. We
+            forget how to simply be ourselves. We lose our innocence and the
+            practice of seeing life without filters. Our connection to joy
+            fades, replaced by the fear of expectations and criticism, and life
+            becomes weighed down by judgment and consequences.
         </div>
         <div>
-            Playful Again is about resurrecting that dreamy, whimsical world of
-            play and bringing us back to that magical place.
+            Playful Again is an invitation to reconnect to the childlike joy and
+            wonder that comes from the pure act of play, bringing us back to
+            that magical place.
         </div>
     </div>
 </div>
 <div class="container-inner mx-auto pt-8 lg:pt-10 lg:pb-2">
-    <img
-        src="/img/ui/playful_again_concept_playground_wide.gif"
-        alt="Concept art of the playground with spinning figures"
-    />
+    <!-- Square version for phones in portrait, wide version otherwise -->
+    <picture>
+        <source
+            media="(orientation: portrait) and (max-width: 767px)"
+            srcset="/img/ui/playful_again_concept_playground_square.gif"
+        />
+        <img
+            src="/img/ui/playful_again_concept_playground_wide.gif"
+            alt="Concept art of the playground with spinning figures"
+        />
+    </picture>
 </div>
 
 <!-- Design -->
