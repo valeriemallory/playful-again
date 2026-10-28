@@ -4,6 +4,11 @@ export interface Photo {
   alt: string;
   width: number;
   height: number;
+  // Optional photographer credit, shown below the photo in the Lightbox (not in the grid).
+  // Credited photos also skip the Lightbox's "© Valerie Mallory Art" watermark.
+  // `creditUrl` (optional) turns the credit into a link that opens in a new tab.
+  credit?: string;
+  creditUrl?: string;
 }
 
 export interface PhotoCell extends Photo {

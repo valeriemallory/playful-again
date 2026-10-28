@@ -2,6 +2,7 @@
   import { untrack } from 'svelte';
   import { onMount } from 'svelte';
   import type { Photo } from '$lib/types.js';
+  import PhotoCredit from './PhotoCredit.svelte';
 
   interface Props {
     photos: Photo[];
@@ -92,15 +93,23 @@
   {/if}
 
   <!-- Image -->
-  <!-- svelte-ignore a11y_no_static_element_interactions -->
-  <div class="lb-img-wrap" role="presentation" oncontextmenu={(e) => e.preventDefault()}>
-    <img
-      src={current.src}
-      alt={current.alt || 'Artwork by Valerie Mallory'}
-      class="lb-img"
-      draggable="false"
-    />
-    <div class="lb-watermark" aria-hidden="true">© Valerie Mallory Art</div>
+  <div class="lb-figure" class:has-credit={!!current.credit}>
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div class="lb-img-wrap" role="presentation" oncontextmenu={(e) => e.preventDefault()}>
+      <img
+        src={current.src}
+        alt={current.alt || 'Artwork by Valerie Mallory'}
+        class="lb-img"
+        draggable="false"
+      />
+      <!-- Credited photos belong to another photographer, so they don't get Valerie's watermark -->
+      {#if !current.credit && !current.creditUrl}
+        <div class="lb-watermark" aria-hidden="true">© Valerie Mallory Art</div>
+      {/if}
+    </div>
+    <div class="lb-credit">
+      <PhotoCredit photo={current} />
+    </div>
   </div>
 
   <!-- Counter -->
@@ -164,6 +173,24 @@
   .lb-prev { left: 0.5rem; }
   .lb-next { right: 0.5rem; }
 
+  .lb-figure {
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+  }
+
+  /* width: 0 + min-width: 100% keeps the credit from widening the figure past the image */
+  .lb-credit {
+    width: 0;
+    min-width: 100%;
+  }
+
+  /* Leave room below the image for the credit line */
+  .has-credit .lb-img-wrap,
+  .has-credit .lb-img {
+    max-height: calc(85vh - 2rem);
+  }
+
   .lb-img-wrap {
     position: relative;
     cursor: default;
@@ -207,5 +234,13 @@
     font-size: 0.8125rem;
     pointer-events: none;
     white-space: nowrap;
+  }
+
+  /* Phones in landscape: the space below the image is too short for the counter,
+     so it would cover the bottom of the photo */
+  @media (orientation: landscape) and (max-height: 500px) {
+    .lb-counter {
+      display: none;
+    }
   }
 </style>
