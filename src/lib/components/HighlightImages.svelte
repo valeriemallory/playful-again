@@ -18,7 +18,8 @@
         width?: string;
         /** Block width on phones and small tablets (below 950px) */
         mobileWidth?: string;
-        /** No row grows taller than this; a taller row is narrowed and centered */
+        /** No row grows taller than this; if one would, the whole block narrows
+         *  (centered) so every row keeps the same width */
         maxRowHeight?: number;
         /** Space between images, in px: one number, or { mobile, desktop }
          *  (a missing key uses the other one's value) */
@@ -88,22 +89,35 @@
         });
     });
 
+    // The block's max width: the narrowest width at which any row reaches
+    // maxRowHeight. Capping the whole block (not each row separately) keeps
+    // every row the same width, so the edges stay straight. A row's height is
+    // (width - gaps) / (sum of ratios), so it reaches maxRowHeight at
+    // maxRowHeight x (sum of ratios) + gaps. Uses CSS vars so the mobile/desktop
+    // gap applies; the _sm version is for portrait phones.
+    function maxBlockWidth(key: "ratioSum" | "ratioSumSm"): string {
+        const widths = layout.map(
+            (row) =>
+                `calc(var(--hl-max-row-height) * ${row[key]} + var(--hl-gap) * ${row.images.length - 1})`,
+        );
+        return widths.length === 1 ? widths[0] : `min(${widths.join(", ")})`;
+    }
+
     // Keep in sync with the matching @media rule in the styles below
     const PORTRAIT_PHONE = "(orientation: portrait) and (max-width: 767px)";
 </script>
 
 <!-- Each image's flex-grow and aspect-ratio are both its width/height ratio, so
-     all images in a row end up the same height. A row's natural height is
-     (row width - gaps) / (sum of ratios), so capping the row's width at
-     maxRowHeight x (sum of ratios) + gaps caps its height without cropping. -->
+     all images in a row end up the same height, and every row fills the block's
+     width. The block's max-width (see maxBlockWidth) keeps the tallest row at
+     or under maxRowHeight without cropping. -->
 <div
     class="highlight-images"
-    style="--hl-width: {width}; --hl-mobile-width: {mobileWidth}; --hl-max-row-height: {maxRowHeight}px; --hl-gap-desktop: {desktopGap}px; --hl-gap-mobile: {mobileGap}px;"
+    style="--hl-width: {width}; --hl-mobile-width: {mobileWidth}; --hl-max-row-height: {maxRowHeight}px; --hl-gap-desktop: {desktopGap}px; --hl-gap-mobile: {mobileGap}px; --hl-max-block: {maxBlockWidth('ratioSum')}; --hl-max-block-sm: {maxBlockWidth('ratioSumSm')};"
 >
     {#each layout as row, r (r)}
         <div
             class="highlight-row"
-            style="--row-ratio: {row.ratioSum}; --row-ratio-sm: {row.ratioSumSm}; --row-gaps: {row.images.length - 1};"
         >
             {#each row.images as image (image.id)}
                 <picture
@@ -131,6 +145,7 @@
     .highlight-images {
         --hl-gap: var(--hl-gap-desktop);
         width: var(--hl-width);
+        max-width: var(--hl-max-block);
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -140,9 +155,6 @@
     .highlight-row {
         display: flex;
         gap: var(--hl-gap);
-        width: 100%;
-        max-width: calc(var(--hl-max-row-height) * var(--row-ratio) + var(--hl-gap) * var(--row-gaps));
-        margin: 0 auto;
     }
 
     .highlight {
@@ -173,8 +185,8 @@
 
     /* Portrait phones: images with a small version switch to its ratio */
     @media (orientation: portrait) and (max-width: 767px) {
-        .highlight-row {
-            max-width: calc(var(--hl-max-row-height) * var(--row-ratio-sm) + var(--hl-gap) * var(--row-gaps));
+        .highlight-images {
+            max-width: var(--hl-max-block-sm);
         }
 
         .highlight {
