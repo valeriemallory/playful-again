@@ -151,10 +151,12 @@
     </picture>
 </div>
 
-<!-- Design -->
+<!-- Whimsical World of Play -->
 <div class="prose mx-8 max-w-3xl pt-12 pb-6 lg:mx-auto md:prose-lg">
     <div class="space-y-6 lg:space-y-8">
-        <div class="text-center text-xl font-semibold sm:text-2xl">Design</div>
+        <div class="text-center text-xl font-semibold sm:text-2xl">
+            Whimsical World of Play
+        </div>
         <div>
             Playful Again creates an interactive world of mythical fairy tales,
             wonder and play. The piece has cast figures within, a playground
@@ -167,9 +169,9 @@
             powered by solar energy.
         </div>
         <div>
-            The walls inside will have giant paintings of acrobats. At night
-            there will be dramatic shadow play from the solar-powered figures in
-            perpetual motion.
+            The walls inside have giant paintings of acrobats and performers. At
+            night, ornate figures in perpetual motion create dramatic shadow
+            play throughout the space.
         </div>
     </div>
 </div>
